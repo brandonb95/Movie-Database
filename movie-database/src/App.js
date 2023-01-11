@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 function App() {
+
+  const movieDatabase = {
+    title: 'Movie Database',
+    authors: 'Brandon Birk, Mai Le, Len Tong'
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <title>Movie Database</title>
+      <Header title="Movie Database"/>
+
+      <Footer author={movieDatabase.authors}/>
     </div>
   );
 }
