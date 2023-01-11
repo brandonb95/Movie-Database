@@ -1,19 +1,19 @@
 import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+// import Footer from './components/Footer/Footer';
 
 function App() {
 
   const movieDatabase = {
-    title: 'Movie Database',
+    title: 'Sunset Movies',
     authors: 'Brandon Birk, Mai Le, Len Tong'
   }
 
   return (
     <div>
-      <title>Movie Database</title>
-      <Header title="Movie Database"/>
+      <title>Sunset Movies</title>
+      <Header title="SUNSET"/>
 
-      <Footer author={movieDatabase.authors}/>
+      {/* <Footer author={movieDatabase.authors}/> */}
     </div>
   );
 }

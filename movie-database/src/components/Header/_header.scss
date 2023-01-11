@@ -1,1 +1,23 @@
-@use "variables" as *;
+@use "../variables" as *;
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: $dark-bg-color;
+    padding: 0.8rem;
+
+    h1{
+        font-family: $logo-font;
+        font-weight: 200;
+        letter-spacing: 4px;
+        color: $white;
+        font-size: 1.5rem;
+    }
+
+    img{
+        max-width: 3rem;
+    }
+}
+
+
