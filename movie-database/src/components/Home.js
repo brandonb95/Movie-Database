@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import Header from "./Header";
+import '../scss/styles.scss';
 import { posterPath } from './movieVariables';
 
 function Home() {
@@ -24,6 +25,7 @@ useEffect(() =>{
     fetchData();
 }, [filter]);
     return(
+      <div className="movie-data">
         <section>
         <select onChange={changeFilter} name="filterSelector" id="filterSelector">
         <option value="popular">Popular</option>
@@ -43,6 +45,7 @@ useEffect(() =>{
         </ul>
       )}
         </section>
+        </div>
     )
 }
 

@@ -1,1 +1,7 @@
 @use "variables" as *;
+
+// Change this to handle distance from top of window
+.movie-data{
+    position: relative;
+    top: 7rem;
+}

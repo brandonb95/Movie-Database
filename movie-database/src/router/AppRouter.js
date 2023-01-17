@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import Header from "../components/Header";
-import { posterPath } from '../components/movieVariables';
 import Home from "../components/Home";
 
 function AppRouter() {
