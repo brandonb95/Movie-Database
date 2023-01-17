@@ -55,14 +55,14 @@
   margin: 7px;
   transition: all 0.55s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-  .show &:nth-child(2) {
-    opacity: 0;
-  }
-
   .show &:nth-child(1) {
     transform: translateY(11px) rotate(45deg);
   }
 
+  .show &:nth-child(2) {
+    opacity: 0;
+  }
+  
   .show &:nth-child(3) {
     transform: translateY(-11px) rotate(-45deg);
   }
