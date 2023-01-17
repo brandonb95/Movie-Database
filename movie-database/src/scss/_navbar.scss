@@ -19,7 +19,7 @@
     display: block;
     text-align: center;
     line-height: 60px;
-    font-size: 1.3em;
+    font-size: 1.2rem;
     font-weight: bold;
     padding: 0 12px;
     @at-root .main-nav li:not(:first-child) a {
@@ -55,14 +55,15 @@
   margin: 7px;
   transition: all 0.55s cubic-bezier(0.075, 0.82, 0.165, 1);
 
+
   .show &:nth-child(1) {
     transform: translateY(11px) rotate(45deg);
   }
 
   .show &:nth-child(2) {
-    opacity: 0;
+  opacity: 0;
   }
-  
+
   .show &:nth-child(3) {
     transform: translateY(-11px) rotate(-45deg);
   }
