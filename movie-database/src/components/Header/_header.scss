@@ -1,110 +1,53 @@
 @use "../variables" as *;
 
 header {
+  background-color: $dark-bg-color;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    font-family: $logo-font;
+    font-weight: 200;
+    line-height: 70px;
+    letter-spacing: 3px;
+    padding-left: 0.4rem;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  img {
+    max-width: 4rem;
+    margin: 0 0 0 1rem;
+  }
+
+  li a {
+    color: $white;
+  }
+}
+
+.logo-wrapper {
+  display: flex;
+  width: 30vw;
+  align-items: center;
+  padding: 0.6rem;
+
+  a {
+    text-decoration: none;
+    color: $white;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  header {
+    flex-wrap: nowrap;
     padding: 0 1rem;
-    background-color: $dark-bg-color;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
 
-    h1 {
-        font-family: $logo-font;
-        font-weight: 200;
-        line-height: 70px;
-        letter-spacing: 3px;
-        padding-left: 0.4rem;
-        a {
-            text-decoration: none;
-            color: black;
-        }
+    ul {
+      display: flex;
     }
-
-
-    img{
-        max-width: 4rem;
-        margin: 0 0 0 1rem ;
-    }
-
-    li a{
-        color: $white;
-    }
-
+  }
 }
-
-
-.hamburger-icon{
-    margin: 1rem;
-}
-.line {
-    background: $white;
-    display: block;
-    position: relative;
-    width: 24px;
-    height: 2px;
-    border-radius: 2px;
-    margin: 5px;
-    transition: all .55s cubic-bezier(0.075, 0.82, 0.165, 1);
-} /* Style span tag */
-
-.line::before,
-.line::after{
-    background: var(--white);
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    transition: all .2s ease-out;
-    width: 100%;
-}
-.line::before{
-    top: 5px;
-    transform: translate(10px, 0);
-
-}
-.line::after{
-    top: -5px;
-}
-
-.logo-wrapper{
-    display: flex;
-    width: 30vw;
-    align-items: center;
-
-    a{
-     text-decoration: none;
-     color: $white;
-    }
-}
-
-.btn-main-nav{
-    color: transparent;
-    background-color: transparent;
-    border: none;
-}
-
-@media screen and (min-width: 48rem){
-
-    header{
-        flex-wrap: nowrap;
-        padding: 0rem;
-
-        ul{
-            display: flex;
-        }
-    }
-
-    .btn-main-nav{
-        visibility: hidden;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        line-height: 1;
-        border: none;
-        background: none;
-        margin-right: 0.75em;
-    }
-    
-}
-
-
