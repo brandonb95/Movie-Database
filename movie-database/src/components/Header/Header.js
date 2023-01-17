@@ -27,7 +27,7 @@ const Header = ({ title }) => {
 
     return (
         <header className={navOpen ? 'show' : undefined}>
-          <div class="logo-wrapper">
+          <div className="logo-wrapper">
           <img src={logo} alt="Sunset Logo" />
           <h1>
           <Link to="/">{title}</Link>

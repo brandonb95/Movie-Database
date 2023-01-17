@@ -1,6 +1,8 @@
 @use "../variables" as *;
 
 header {
+  position: absolute;
+  min-width: 100vw;
   background-color: $dark-bg-color;
   display: flex;
   flex-wrap: wrap;
