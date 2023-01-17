@@ -1,9 +1,9 @@
 // import React from 'react';
-import '../styles.scss';
-import  logo  from './logo.svg';
+import '../scss/styles.scss';
+import  logo  from '../scss/logo.svg';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../Navbar/Navbar';
+import Navbar from './Navbar';
 
 
 const Header = ({ title }) => {

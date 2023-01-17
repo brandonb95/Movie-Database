@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
-import Header from "../Header/Header";
-import { posterPath } from '../movieVariables';
+import Header from "./Header";
+import { posterPath } from './movieVariables';
 
 function Home() {
 // state for managing fetched data

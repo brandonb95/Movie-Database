@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {posterPath} from './components/movieVariables';
-import Header from './components/Header/Header';
+import Header from './components/Header';
 // import Footer from './components/Footer/Footer';
 
 import './components/styles.scss';
