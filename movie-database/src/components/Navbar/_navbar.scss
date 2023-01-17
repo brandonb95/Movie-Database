@@ -1,0 +1,122 @@
+@use "../variables" as *;
+
+.main-nav {
+  width: 100%;
+  background-color: $dark-bg-color;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s ease, visibility 0s 0.5s;
+
+  .show & {
+    transition: height 0.5s ease, visibility 0s;
+    visibility: visible;
+    height: 240px;
+  }
+
+  a {
+    color: $light-bg-color;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    line-height: 60px;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 0 12px;
+    @at-root .main-nav li:not(:first-child) a {
+      border-top: 1px solid $dark-bg-color;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: rgba(white, 0.2);
+    }
+  }
+}
+
+// Mobile Menu
+.btn-main-nav {
+  color: transparent;
+  background-color: transparent;
+  border: none;
+}
+
+.hamburger-icon {
+  margin: 0 3rem;
+  cursor: pointer;
+}
+
+.line {
+  background: $white;
+  display: block;
+  position: relative;
+  width: 36px;
+  height: 4px;
+  border-radius: 2px;
+  margin: 7px;
+  transition: all 0.55s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  .show &:nth-child(2) {
+    opacity: 0;
+  }
+
+  .show &:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+  }
+
+  .show &:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .main-nav {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    transition: none;
+    overflow: visible;
+    margin: 0 2rem;
+    .show & {
+      display: flex;
+      transition: none;
+      // height: auto;
+    }
+
+    li {
+      text-decoration: none;
+      list-style: none;
+      // flex: 1;
+      padding: 1rem;
+    }
+
+    a {
+      padding: 0;
+      text-align: center;
+      border-top: none;
+      @at-root .main-nav li:not(:first-child) a {
+        border-top: none;
+        // border-left: 3px solid $dark-bg-color;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: transparent;
+        color: $theme-color;
+        transition: 0.5s;
+      }
+    }
+  }
+
+  .btn-main-nav {
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 1;
+    border: none;
+    background: none;
+    margin-right: 0.75em;
+  }
+}

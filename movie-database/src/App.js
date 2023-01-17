@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import {posterPath} from './components/movieVariables';
 import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+// import Footer from './components/Footer/Footer';
 
 import './components/styles.scss';
 
 function App() {
 
   const movieDatabase = {
-    title: 'Movie Database',
+    title: 'Sunset Movies',
     authors: 'Brandon Birk, Mai Le, Len Tong'
 
     
@@ -54,6 +54,10 @@ function App() {
         </ul>
       )}
 
+      <title>Sunset Movies</title>
+      <Header title="SUNSET"/>
+
+      {/* <Footer author={movieDatabase.authors}/> */}
     </div>
   );
 }
