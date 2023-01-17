@@ -32,13 +32,19 @@ header {
 
 }
 
+
+.hamburger-icon{
+    margin: 1rem;
+}
 .line {
     background: $white;
     display: block;
-    height: 2px;
     position: relative;
     width: 24px;
-
+    height: 2px;
+    border-radius: 2px;
+    margin: 5px;
+    transition: all .55s cubic-bezier(0.075, 0.82, 0.165, 1);
 } /* Style span tag */
 
 .line::before,
@@ -53,6 +59,8 @@ header {
 }
 .line::before{
     top: 5px;
+    transform: translate(10px, 0);
+
 }
 .line::after{
     top: -5px;
@@ -67,6 +75,12 @@ header {
      text-decoration: none;
      color: $white;
     }
+}
+
+.btn-main-nav{
+    color: transparent;
+    background-color: transparent;
+    border: none;
 }
 
 @media screen and (min-width: 48rem){
