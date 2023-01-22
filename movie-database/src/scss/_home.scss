@@ -1,8 +1,51 @@
 @use "variables" as *;
 
 // Change this to handle distance from top of window
-.movie-data{
-    z-index: -1;
-    position: relative;
-    top: 7rem;
+.movie-data {
+  z-index: -1;
+  position: relative;
+  top: 7rem;
+  display: flex;
+  justify-content: center;
+
+  ul {
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem 0;
+
+    li {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-size: 15px;
+      max-width: 100%;
+
+      img {
+        margin: 0 auto;
+        width: 90%;
+        max-width: 100%;
+        padding-bottom: 1rem;
+      }
+    }
+  }
+}
+
+// 768 px (Tablet)
+@media screen and (min-width: 48rem) {
+  .movie-data {
+    ul {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+}
+
+// 1344 px (Desktop)
+@media screen and (min-width: 84rem) {
+  .movie-data {
+    ul {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+  }
 }
