@@ -5,8 +5,18 @@
   z-index: -1;
   position: relative;
   top: 7rem;
-  display: flex;
-  justify-content: center;
+
+
+  #filterSelector{
+    background-color: $sort-color;
+    color: $white;
+    width: 9rem;
+    height: 3rem;
+    text-align: center;
+    font-size: 24px;
+    display: block;
+    margin: 0 auto;
+    }
 
   ul {
     margin: 1rem;
