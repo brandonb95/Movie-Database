@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Header from "./Header";
 import '../scss/styles.scss';
 import { posterPath } from './movieVariables';
+import {API_KEY} from '../components/movieVariables';
 
 function Home() {
 // state for managing fetched data
@@ -18,9 +19,14 @@ const changeFilter = (event) =>{
 
 useEffect(() =>{
   const fetchData = async () => {
-    const api = await fetch(`https://api.themoviedb.org/3/movie/${filter}?api_key=0dd20164c60e7144bc2ec57531eeddbd&language=en-US&page=1`);
+    const api = await fetch(`https://api.themoviedb.org/3/movie/${filter}?api_key=${API_KEY}&language=en-US&page=1`);
     const jsonData = await api.json();
     setmovieData(jsonData.results);
+
+
+     // get the first 12 movies here, then set them as the data
+     const firstTwelve = jsonData.results.splice(0, 12);
+     setmovieData(firstTwelve);
   };
     fetchData();
 }, [filter]);
