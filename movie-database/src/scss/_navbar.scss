@@ -1,6 +1,8 @@
 @use "variables" as *;
 
 .main-nav {
+  position: relative;
+  z-index: 100;
   width: 100%;
   background-color: $dark-bg-color;
   height: 0;
