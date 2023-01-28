@@ -45,7 +45,7 @@ const containerStyles = {
         <ImageSlider slides={slides}/>
         </div>
         
-        <section>
+        <section className="movie-list">
         <select onChange={changeFilter} name="filterSelector" id="filterSelector">
         <option value="popular">Popular</option>
         <option value="now_playing">Now Playing</option>

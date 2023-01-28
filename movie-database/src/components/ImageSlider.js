@@ -1,76 +1,36 @@
 import { useState } from "react";
+import BtnSlider from './BtnSlider';
+import dataSlider from "./dataSlider";
 
-const ImageSlider = ({slides}) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+const ImageSlider = () => {
 
-    const sliderParentStyles={
-        height: '100%',
-        position: 'relative',
-        top: '-12%',
-    };
-    
-    const slideStyles = {
-        width: '100%',
-        height: '100%',
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundImage: `url(${slides[currentIndex].url})`
-    };
+    const [slideIndex, setSlideIndex] = useState(1)
 
-    const firstDot = {
-        position: 'absolute',
-        top: '65%',
-        left: '50%',
-        transform: 'translate(-150%, 0)',
-        fontSize: '45px',
-        color: '#fff',
-        zIndex: 1,
-        cursor: 'pointer',
-    };
-
-    const secondDot = {
-        position: 'absolute',
-        top: '65%',
-        left: '50%',
-        fontSize: '45px',
-        color: '#fff',
-        zIndex: 1,
-        cursor: 'pointer',
-    };
-
-    const thirdDot = {
-        position: 'absolute',
-        top: '65%',
-        left: '50%',
-        transform: 'translate(150%, 0)',
-        fontSize: '45px',
-        color: '#fff',
-        zIndex: 1,
-        cursor: 'pointer',
-    };
-    
-    //Jump Backwards
-    const goToPrevious = () => {
-        const isFirstSlide = currentIndex === 0;
-        const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-        setCurrentIndex(newIndex);
-    };
-
-    //Jump Forwards
-    const goToNext = () => {
-        const isLastSlide = currentIndex === slides.legth - 1;
-        const newIndex = isLastSlide ? 0 : currentIndex + 1;
-        setCurrentIndex(newIndex);
-    };
+    const moveDot = index => {
+        setSlideIndex(index)
+    }
 
     return(
-        <div style={sliderParentStyles}>
-            <div style={firstDot} onClick={goToPrevious}>•</div>
-            <div style={secondDot} onClick={goToNext}>•</div>
-            <div style={thirdDot}>•</div>
-            <div style={slideStyles}></div>
-        </div>
+       <div className="container-slider">
+            {dataSlider.map((obj, index) => {
+                return(
+                    <div 
+                    key={obj.id}
+                    className={slideIndex === index + 1 ? "slide active-anim" : "slide"}>
+                        <img src={process.env.PUBLIC_URL + `carousel-image-${index +1}.jpg`} alt=""/>
+                    </div>
+                )
+            })}
+
+
+            <div className="container-dots">
+            {Array.from({length: 3}).map((item, index) => (
+                 <div onClick={() => moveDot(index + 1)} 
+                 className={slideIndex === index + 1 ? "dot active" : "dot"}></div>
+             ))}
+            </div>
+       </div>
     )
-};
+}
 
 export default ImageSlider;
