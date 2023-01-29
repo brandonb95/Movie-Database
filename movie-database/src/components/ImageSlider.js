@@ -18,6 +18,10 @@ const ImageSlider = () => {
                     key={obj.id}
                     className={slideIndex === index + 1 ? "slide active-anim" : "slide"}>
                         <img src={process.env.PUBLIC_URL + `carousel-image-${index +1}.jpg`} alt=""/>
+                        <div className='bringToFront'>
+                        <h1>{obj.title}</h1>
+                        <h2>{obj.subTitle}</h2>
+                        </div>
                     </div>
                 )
             })}
