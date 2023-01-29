@@ -59,7 +59,10 @@ const containerStyles = {
          <ul>
            {movieData.map(item => (
 
-            <li key={item.id}><img src={posterPath+item.poster_path} alt={''}></img>{item.title}</li>
+            <li key={item.id}>
+              <img src={posterPath+item.poster_path} alt={''}></img>
+                {item.title}
+                </li>
            ))}
         </ul>
       )}
