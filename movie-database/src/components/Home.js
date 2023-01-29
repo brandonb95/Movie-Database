@@ -4,6 +4,7 @@ import Header from "./Header";
 import '../scss/styles.scss';
 import { posterPath } from './movieVariables';
 import ImageSlider from "./ImageSlider";
+import AddFavourite from "./Favourites";
 
 function Home() {
 // state for managing fetched data
@@ -38,6 +39,15 @@ const containerStyles = {
   height: '200px',
   margin: '0 auto',
 }
+
+const selectFavourite = (props) => {
+  const FaveComponent = props.favouriteComponent;
+  return (
+    <FaveComponent />
+
+  )
+}
+
     return(
       
       <div className="movie-data">
@@ -58,9 +68,12 @@ const containerStyles = {
        ) : (
          <ul>
            {movieData.map(item => (
-
+            
             <li key={item.id}>
-              <img src={posterPath+item.poster_path} alt={''}></img>
+              <div className="image-container">
+              <img src={posterPath+item.poster_path} alt={''} favouriteComponent = {AddFavourite}></img>
+              <div className="overlay"></div>
+              </div>
                 {item.title}
                 </li>
            ))}
