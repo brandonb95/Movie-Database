@@ -69,20 +69,20 @@ const containerStyles = {
            ))}
         </div>
 
-      <div className="movie-cards">
-      {data?.map((item) => (
-          <MoviePoster
-            posterPath={item.poster_path}
-            title={item.title}
-            rating={item.vote_average}
-            movieObj={item}
-          />
-          <div className="title">{item.original_title}</div>
-          <div className="date">{formatDate(item.release_date)}</div>
-          <Link to={`/details/${item.id}`}>More Info</Link>
-        </div>
-      ))}
-      </div>
+      // <div className="movie-cards">
+      // {data?.map((item) => (
+      //     <MoviePoster
+      //       posterPath={item.poster_path}
+      //       title={item.title}
+      //       rating={item.vote_average}
+      //       movieObj={item}
+      //     />
+      //     <div className="title">{item.original_title}</div>
+      //     <div className="date">{formatDate(item.release_date)}</div>
+      //     <Link to={`/details/${item.id}`}>More Info</Link>
+      //   </div>
+      // ))}
+      // </div>
       )}
         </section>
 

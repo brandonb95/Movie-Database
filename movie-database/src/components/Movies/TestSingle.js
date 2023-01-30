@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { posterPath } from "../globals/globalVariables";
-import {API_KEY} from '../components/movieVariables';
+import { posterPath } from "../movieVariables";
+import {API_KEY} from '../movieVariables';
 const Single = () => {
   const [movie, setMovie] = useState([]);
 
