@@ -15,9 +15,7 @@ const Footer = ({ title }) => {
                 <img src={logo} alt="Sunset Logo" />
             </div>
 
-            <div className="footer-desc">
-                <p>Sunset Movies is credible source for movies, TV shows, celebrity content. Find ratings and reviews for the latest movies.</p>
-            </div>
+                <p className="footer-desc">Sunset Movies is credible source for movies, TV shows, celebrity content. Find ratings and reviews for the latest movies.</p>
             </div>
 
 
