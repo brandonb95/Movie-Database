@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Header from "../components/Header";
 import Home from "../components/Home";
 import About from "../components/About";
+import Footer from "../components/Footer";
 
 function AppRouter() {
   
@@ -18,8 +19,7 @@ function AppRouter() {
     <Route path='/about' exact element={<About />}/>
   </Routes>
 </main>
-
-
+<Footer title="SUNSET MOVIES"/>
 
 </div>
 </BrowserRouter>

@@ -1,1 +1,37 @@
 @use "variables" as *;
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 2rem 1.5rem;
+    background-color: black;
+    color: white;
+
+    img {
+        margin-top: 2rem;
+        width: 3rem;
+    }
+
+    h1 {
+        font-size: 1.25rem;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: $white;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent;
+      color: $theme-color;
+      transition: 0.5s;
+    }
+}
