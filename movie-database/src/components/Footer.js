@@ -7,11 +7,13 @@ const Footer = ({ title }) => {
     return (     
     
     <footer className="footer-logo-wrapper">
+        <section className="footer-main">
         <div className="footer-logo">
             <img src={logo} alt="Sunset Logo" />
         </div>
 
         <div className="footer-content">
+
             <h1><Link to="/">{title}</Link></h1>
 
             <nav className="footer-nav">
@@ -30,6 +32,12 @@ const Footer = ({ title }) => {
                 </li>
             </ul>
             </nav>
+        </div>
+        </section>
+
+        <div className="credits">
+            <p>REACT Movie Database - FWD32</p>
+            <p>Brandon Birk, Mai Le, Len Tong</p>
         </div>
 
     </footer>
