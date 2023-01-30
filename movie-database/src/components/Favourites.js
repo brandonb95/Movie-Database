@@ -1,12 +1,12 @@
 import React from 'react';
 import  Unselected  from '../scss/Favourite-Unselected.svg';
 
-const AddFavourite = () => {
+const AddFavourite = (props) => {
+    const FavouriteComponent = props.favouriteComponent;
+
     return(
         <>
-        <span>Add to Favourites</span>
-        <img src={Unselected} alt="Unfavourite" />
-
+        <img className="movie-favourite" src={Unselected} alt="Unfavourite" faveComp={FavouriteComponent} />
         </>
     )
 }

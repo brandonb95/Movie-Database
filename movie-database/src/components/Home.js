@@ -7,6 +7,8 @@ import ImageSlider from "./ImageSlider";
 import AddFavourite from "./Favourites";
 
 function Home() {
+  
+
 // state for managing fetched data
 const [movieData, setmovieData] = useState('');
 
@@ -40,13 +42,6 @@ const containerStyles = {
   margin: '0 auto',
 }
 
-const selectFavourite = (props) => {
-  const FaveComponent = props.favouriteComponent;
-  return (
-    <FaveComponent />
-
-  )
-}
 
     return(
       
@@ -70,9 +65,13 @@ const selectFavourite = (props) => {
            {movieData.map(item => (
             
             <li key={item.id}>
+
               <div className="image-container">
-              <img src={posterPath+item.poster_path} alt={''} favouriteComponent = {AddFavourite}></img>
-              <div className="overlay"></div>
+              <AddFavourite />
+
+              <img className="poster" src={posterPath+item.poster_path} alt={''} favouriteComponent={AddFavourite}></img>
+              <div className="overlay">
+              </div>
               </div>
                 {item.title}
                 </li>
