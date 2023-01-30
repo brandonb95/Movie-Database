@@ -1,14 +1,17 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import Header from "./Header";
+import Card from "../components/Movies/Card";
 import '../scss/styles.scss';
 import { posterPath } from './movieVariables';
 import {API_KEY} from '../components/movieVariables';
 import ImageSlider from "./ImageSlider";
 
+import {Link} from "react-router-dom";
+
 function Home() {
 // state for managing fetched data
-const [movieData, setmovieData] = useState('');
+const [movieData, setmovieData] = useState([]);
 
 const [filter, setFilter] = useState('popular');
 // function that actually fetches the data asynchronously
@@ -32,6 +35,24 @@ useEffect(() =>{
     fetchData();
 }, [filter]);
 
+console.log(movieData)
+
+let cards = movieData.map((movie, i) => (
+  <Card
+      object={movieData[i]}
+      key={movie.id}
+      // this returns true or false
+      // fav={favs.includes(movie.id)}
+      id={movie.id}
+      title={movie.title}
+      voteAverage={movie.vote_average}
+      overview={movie.overview}
+      posterPath={movie.poster_path}
+      releaseDate={movie.release_date}
+      // handleFavoriteClick={handleFavoriteButton}
+  />
+));
+
 // Create slides
 const slides =[
   {url: 'http://localhost:3000/carousel-image-1.jpg', title:'Spider-Man'},
@@ -50,46 +71,25 @@ const containerStyles = {
         <div style={containerStyles}>
         <ImageSlider slides={slides}/>
         </div>
+
         
         <section className="movie-list">
-        <select onChange={changeFilter} name="filterSelector" id="filterSelector">
-        <option value="popular">Popular</option>
-        <option value="now_playing">Now Playing</option>
-        <option value="top_rated">Top Rated</option>
-        <option value="upcoming">Upcoming</option>
-      </select>
-
-      {movieData === '' ? (
-        '<h1>Fetching todos...</h1>'
-       ) : (
-         <div>
-           {movieData.map(item => (
-
-            <div key={item.id}><img src={posterPath+item.poster_path} alt={''}></img>{item.title}</div>
-           ))}
-        </div>
-
-      // <div className="movie-cards">
-      // {data?.map((item) => (
-      //     <MoviePoster
-      //       posterPath={item.poster_path}
-      //       title={item.title}
-      //       rating={item.vote_average}
-      //       movieObj={item}
-      //     />
-      //     <div className="title">{item.original_title}</div>
-      //     <div className="date">{formatDate(item.release_date)}</div>
-      //     <Link to={`/details/${item.id}`}>More Info</Link>
-      //   </div>
-      // ))}
-      // </div>
-      )}
+          <select onChange={changeFilter} name="filterSelector" id="filterSelector">
+          <option value="popular">Popular</option>
+          <option value="now_playing">Now Playing</option>
+          <option value="top_rated">Top Rated</option>
+          <option value="upcoming">Upcoming</option>
+          </select>
         </section>
 
+        <section className="movie-list">
+            <div className="movie-container">
+                {cards}
+            </div>
+        </section>
 
-    
+      </div>
 
-        </div>
 
         
     )
