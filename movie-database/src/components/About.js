@@ -5,6 +5,7 @@ const About = () => {
 
 return (
 
+    <body>
     <div className="about-content">
         <div classname="about-logo">
             <img src={logo} alt="Sunset Logo" />
@@ -20,6 +21,7 @@ return (
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis ex minima impedit autem eaque qui magnam earum ab fugit incidunt delectus quibusdam exercitationem a, modi dolorem fuga nemo natus atque.</p>
         </div>
     </div>
+    </body>
 )
 };
 

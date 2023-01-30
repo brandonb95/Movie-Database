@@ -1,8 +1,12 @@
 @use "variables" as *;
 
+body {
+    background-color: $light-bg-color;
+}
 .about-content {
     text-align: center;
     padding: 0 1.2rem;
+    margin-bottom: 5rem;
 
     img {
         max-width: 15rem;
@@ -19,7 +23,7 @@
     }
 
     p {
-        padding-top: 1rem;
+        padding-top: 2rem;
         text-align: left;
     }
 }
@@ -35,10 +39,11 @@
 
         .about-content {
         display: grid;
-        grid-template-columns: 1fr 40rem 1fr;
+        grid-template-columns: 1fr 40fr;
+        
     
         img {
-            max-width: 18rem;
+            width: 18rem;
             margin-top: 15rem;
         }
     
@@ -56,23 +61,10 @@
         }
 }
 
-// @media screen and (min-width: 65rem) {
-
-//     .about-content {
-//     display: grid;
-//     grid-template-columns: 20rem 40rem 20rem;
-
-//     img {
-//         max-width: 18rem;
-//         margin-top: 15rem;
-//     }
-// }
-// }
-
-@media screen and (min-width: 100rem) {
+@media screen and (min-width: 80rem) {
 
     .about-content {
     display: grid;
-    grid-template-columns: 30rem 50rem 1fr;
+    grid-template-columns: 30rem 55rem 1fr;
     }
 }
