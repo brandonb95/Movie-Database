@@ -1,6 +1,7 @@
 import  logo  from '../scss/logo.svg';
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import React, {useState} from "react";
 
 const Footer = ({ title }) => {
 
@@ -8,9 +9,17 @@ const Footer = ({ title }) => {
     
     <footer className="footer-logo-wrapper">
         <section className="footer-main">
-        <div className="footer-logo">
-            <img src={logo} alt="Sunset Logo" />
-        </div>
+        
+            <div className="logo-desc">
+            <div className="footer-logo">
+                <img src={logo} alt="Sunset Logo" />
+            </div>
+
+            <div className="footer-desc">
+                <p>Sunset Movies is credible source for movies, TV shows, celebrity content. Find ratings and reviews for the latest movies.</p>
+            </div>
+            </div>
+
 
         <div className="footer-content">
 
@@ -34,6 +43,7 @@ const Footer = ({ title }) => {
             </nav>
         </div>
         </section>
+
 
         <div className="credits">
             <p>REACT Movie Database - FWD32</p>

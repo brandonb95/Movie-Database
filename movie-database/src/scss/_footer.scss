@@ -18,6 +18,7 @@ footer {
     
         h1 {
             font-size: 1.25rem;
+            font-family: $logo-font;
         }
     
         li {
@@ -29,19 +30,38 @@ footer {
             color: $white;
         }
     
-        &:hover,
-        &:focus,
-        &:active {
+        a:hover,
+        a:focus,
+        a:active {
           background-color: transparent;
           color: $theme-color;
           transition: 0.5s;
         }
+
+        .logo-desc {
+            display: flex;
+
+            .footer-desc {
+                max-width: 25rem;
+                font-size: 0.75rem;
+                margin-top: 2rem;
+                padding-left: 1rem;
+            }
+        }
+
     }
 
     .credits {
-        padding-top: 2rem;
+        padding-top: 3rem;
         text-align: center;
         font-size: .75rem;
+    }
+
+}
+
+@media screen and (max-width: 48rem) {
+    .footer-desc {
+        display: none;
     }
 
 }
