@@ -191,7 +191,7 @@ background: $white;
   .movie-data {
     top: 5.7rem;
 
-    .card-poster {
+    .movie-container {
     top: 5.75rem;
     margin: 1rem 4rem;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -218,7 +218,7 @@ background: $white;
   }
 
   .movie-data {
-    .card-poster {
+    .movie-container {
     margin: 1rem 10rem;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     }
