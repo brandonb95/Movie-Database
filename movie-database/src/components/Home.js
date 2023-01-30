@@ -43,16 +43,38 @@ useEffect(() =>{
       {movieData === '' ? (
         '<h1>Fetching todos...</h1>'
        ) : (
-         <ul>
+         <div>
            {movieData.map(item => (
 
-            <li key={item.id}><img src={posterPath+item.poster_path} alt={''}></img>{item.title}</li>
+            <div key={item.id}><img src={posterPath+item.poster_path} alt={''}></img>{item.title}</div>
            ))}
-        </ul>
+        </div>
+
+      <div className="movie-cards">
+      {data?.map((item) => (
+          <MoviePoster
+            posterPath={item.poster_path}
+            title={item.title}
+            rating={item.vote_average}
+            movieObj={item}
+          />
+          <div className="title">{item.original_title}</div>
+          <div className="date">{formatDate(item.release_date)}</div>
+          <Link to={`/details/${item.id}`}>More Info</Link>
+        </div>
+      ))}
+      </div>
       )}
         </section>
+
+
+    
+
         </div>
+
+        
     )
+
 }
 
 export default Home;

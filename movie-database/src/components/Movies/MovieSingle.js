@@ -2,27 +2,11 @@ import React from 'react';
 // add the place holder no movieposter here
 import noPoster from '';
 // import buttons here !
-import FaveBtn from '';
-import { addFavourite, removeFavourite } from '';
-import { useDispatch } from 'react-redux';
 
-const MovieSingle = ({ movie, isFavourite }) => {
-  // store the last item in a variable
-  const lastItem = movie.genres[movie.genres.length - 1];
+const MovieSingle = ({ movie }) => {
 
   // convert movie rating into percent here
   const rating = Math.round((movie.vote_average / 10) * 100);
-
-  // Redux related for favouriting funciton
-  const dispatch = useDispatch();
-
-  const handleFaveClick = (addToFave, obj) => {
-    if (addToFave === true) {
-          dispatch(addFavourite(obj));
-    } else {
-          dispatch(removeFavourite(obj));
-    }
-  }
 
   return (
     <section className="single-movie-style">
@@ -46,26 +30,6 @@ const MovieSingle = ({ movie, isFavourite }) => {
           <p>{movie.runtime} minutes</p>
         </article>
         <p>{movie.overview}</p>
-        {/* if there are multiple genres, output using this loop */}
-        <article className="bottom-flex">
-          <div>
-            <h2>{movie.genres.length > 1 ? 'Genres' : 'Genre'}</h2>
-            <p>
-              {movie.genres.map((genre) => (
-                <span key={genre.id}>
-                  {genre.id === lastItem.id ? genre.name : genre.name + ', '}
-                </span>
-              ))}
-            </p>
-          </div>
-          <div>
-            { isFavourite ?
-              <FaveBtn movie={movie} isFave={true} handleFaveClick={handleFaveClick}/>
-              :
-              <FaveBtn movie={movie} isFave={false} handleFaveClick={handleFaveClick}/>
-            }
-          </div>
-        </article>
       </div>
     </section>
   );
