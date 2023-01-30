@@ -11,7 +11,7 @@ return (
         </div>
 
         <div className="about-info">
-            <h1>About SunsetFilms</h1>
+            <h1>About Sunset Movies</h1>
             <p>At sunset Movies, we aim to give you the best and latest information on the hottest movies in Hollywood. Founded in 2022, we have the most reliable resources on your favourite actors and actresses, producers and directors, and hehind-the-scenes crew.</p>
 
             <p>Our Sunset Red Carpet Team are on the Floor at many premiers to give us real-time information on what's going on at those popular event!</p>

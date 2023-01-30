@@ -31,11 +31,11 @@
     }
 }
 
-    @media screen and (min-width: 50rem) {
+    @media screen and (min-width: 60rem) {
 
         .about-content {
         display: grid;
-        grid-template-columns: 12rem 40rem;
+        grid-template-columns: 1fr 40rem 1fr;
     
         img {
             max-width: 18rem;
@@ -56,18 +56,18 @@
         }
 }
 
-@media screen and (min-width: 65rem) {
+// @media screen and (min-width: 65rem) {
 
-    .about-content {
-    display: grid;
-    grid-template-columns: 20rem 40rem 20rem;
+//     .about-content {
+//     display: grid;
+//     grid-template-columns: 20rem 40rem 20rem;
 
-    img {
-        max-width: 18rem;
-        margin-top: 15rem;
-    }
-}
-}
+//     img {
+//         max-width: 18rem;
+//         margin-top: 15rem;
+//     }
+// }
+// }
 
 @media screen and (min-width: 100rem) {
 
