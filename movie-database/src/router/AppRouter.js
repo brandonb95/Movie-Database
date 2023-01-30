@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import Header from "../components/Header";
 import Home from "../components/Home";
+import About from "../components/About";
 
 function AppRouter() {
   
@@ -14,6 +15,7 @@ function AppRouter() {
 <main>
   <Routes>
     <Route path='/' exact element={<Home />}/>
+    <Route path='/about' exact element={<About />}/>
   </Routes>
 </main>
 

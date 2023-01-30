@@ -1,0 +1,78 @@
+@use "variables" as *;
+
+.about-content {
+    text-align: center;
+    padding: 0 1.2rem;
+
+    img {
+        max-width: 15rem;
+        margin-top: 8rem;
+    }
+
+    h1 {
+        padding-top: 1rem;
+
+    }
+
+    h2 {
+        padding-top: 2rem;
+    }
+
+    p {
+        padding-top: 1rem;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 31.25rem) {
+    .about-content {
+        text-align: center;
+        padding: 0 3rem;
+    }
+}
+
+    @media screen and (min-width: 50rem) {
+
+        .about-content {
+        display: grid;
+        grid-template-columns: 12rem 40rem;
+    
+        img {
+            max-width: 18rem;
+            margin-top: 15rem;
+        }
+    
+        h1 {
+            padding-top: 12rem;
+        }
+    
+        p {
+            padding-top: 2rem;
+        }
+        }
+
+        .about-info {
+            padding: 0 2rem;
+        }
+}
+
+@media screen and (min-width: 65rem) {
+
+    .about-content {
+    display: grid;
+    grid-template-columns: 20rem 40rem 20rem;
+
+    img {
+        max-width: 18rem;
+        margin-top: 15rem;
+    }
+}
+}
+
+@media screen and (min-width: 100rem) {
+
+    .about-content {
+    display: grid;
+    grid-template-columns: 30rem 50rem 1fr;
+    }
+}
