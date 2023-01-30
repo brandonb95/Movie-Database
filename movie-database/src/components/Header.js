@@ -1,5 +1,5 @@
 // import React from 'react';
-import '../scss/styles.scss';
+// import '../scss/styles.scss';
 import  logo  from '../scss/logo.svg';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';

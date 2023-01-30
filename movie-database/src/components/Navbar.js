@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import '../scss/styles.scss';
+// import '../scss/styles.scss';
 
 const Navbar = ({ handleShowHideNav }) => {
   function closeNav(e) {
@@ -17,13 +17,13 @@ const Navbar = ({ handleShowHideNav }) => {
           <NavLink to="/">TV</NavLink>
         </li>
         <li>
-          <NavLink to="/about">Movies</NavLink>
+          <NavLink to="/">Movies</NavLink>
         </li>
         <li>
-          <NavLink to="/products">Favourites</NavLink>
+          <NavLink to="/favourites">Favourites</NavLink>
         </li>
         <li>
-          <NavLink to="/services">About</NavLink>
+          <NavLink to="/about">About</NavLink>
         </li>
       </ul>
     </nav>

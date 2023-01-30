@@ -4,6 +4,7 @@ import Header from "./Header";
 import '../scss/styles.scss';
 import { posterPath } from './movieVariables';
 import {API_KEY} from '../components/movieVariables';
+import ImageSlider from "./ImageSlider";
 
 function Home() {
 // state for managing fetched data
@@ -30,9 +31,27 @@ useEffect(() =>{
   };
     fetchData();
 }, [filter]);
+
+// Create slides
+const slides =[
+  {url: 'http://localhost:3000/carousel-image-1.jpg', title:'Spider-Man'},
+  {url: 'http://localhost:3000/carousel-image-2.jpg', title:'After Ever Happy'},
+  {url: 'http://localhost:3000/carousel-image-3.jpg', title:'The Woman King'},
+];
+
+const containerStyles = {
+  width: '100%',
+  height: '200px',
+  margin: '0 auto',
+}
     return(
+      
       <div className="movie-data">
-        <section>
+        <div style={containerStyles}>
+        <ImageSlider slides={slides}/>
+        </div>
+        
+        <section className="movie-list">
         <select onChange={changeFilter} name="filterSelector" id="filterSelector">
         <option value="popular">Popular</option>
         <option value="now_playing">Now Playing</option>

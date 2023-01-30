@@ -2,11 +2,14 @@
 
 // Change this to handle distance from top of window
 .movie-data {
-  z-index: -1;
   position: relative;
-  top: 7rem;
+  top: 5.6rem;
+  z-index: 9;
 
-
+.movie-list {
+  position: relative;
+  top: 9rem;
+}
   #filterSelector{
     background-color: $sort-color;
     color: $white;
@@ -40,26 +43,193 @@
         max-width: 100%;
         padding-bottom: 1rem;
       }
+
+      img:hover{
+        filter: brightness(20%);
+        cursor: pointer;
+      }
     }
   }
+}
+
+.container-slider {
+  max-width: 100%;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.slide {
+width: 100%;
+height: 100%;
+position: absolute;
+opacity: 0;
+transition: opacity ease-in-out 0.4s;
+}
+
+.slide img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.active-anim {
+opacity: 1;
+}
+
+.btn-slide {
+width: 60px;
+height: 60px;
+border-radius: 50%;
+background: #f1f1f1;
+border: 1px solid rgba(34, 34, 34, 0.287);
+position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+}
+
+.btn-slide img {
+width: 25px;
+height: 25px;
+pointer-events: none;
+}
+
+.prev {
+top: 50%;
+left: 20px;
+transform: translateY(-60%);
+}
+
+.next {
+top: 50%;
+right: 20px;
+transform: translateY(-60%);
+}
+
+.bringToFront{
+  color: $white;
+  z-index: 99;
+  line-height: 2.2rem;
+
+  h1{
+    position: absolute;
+    top: 7rem;
+    left: 5rem;
+    max-width: 14rem;
+  }
+
+  h2{
+    position: absolute;
+    top: 5rem;
+    left: 5rem;
+  }
+}
+.container-dots {
+position: absolute;
+bottom: 30px;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+}
+
+.dot {
+width: 15px;
+height: 15px;
+border-radius: 50%;
+border: 1.5px solid $white;
+margin: 0 7px;
+}
+
+.dot:hover {
+  cursor: pointer;
+  }
+
+.dot.active {
+background: $white;
 }
 
 // 768 px (Tablet)
 @media screen and (min-width: 48rem) {
+
+  .container-slider{
+    height: 350px;
+  }
+
+ 
+
   .movie-data {
+    top: 5.7rem;
+
     ul {
+    top: 5.75rem;
     margin: 1rem 4rem;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+
+    .movie-list{
+      top: 12rem;
+    }
   }
+
+  .dot {
+    width: 15px;
+    height: 15px;
+    border: 1.5px solid $white;
+    margin: 0 10px;
+    }
 }
 
 // 1344 px (Desktop)
 @media screen and (min-width: 84rem) {
+
+  .container-slider{
+    height: 500px;
+  }
+
   .movie-data {
     ul {
     margin: 1rem 10rem;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     }
+
+    .movie-list{
+      top: 22rem;
+    }
   }
+
+  .container-dots {
+    bottom: 50px;
+    }
+
+  .dot {
+    width: 25px;
+    height: 25px;
+    border: 2px solid $white;
+    margin: 0 15px;
+    }
+
+    .bringToFront{
+      color: $white;
+      z-index: 99;
+      line-height: 3.2rem;
+    
+      h1{
+        position: absolute;
+        top: 12rem;
+        left: 10rem;
+        max-width: 22.2rem;
+        font-size: 3rem;
+      }
+    
+      h2{
+        position: absolute;
+        top: 9.5rem;
+        left: 10rem;
+        font-size: 1.5rem;
+      }
+    }
 }
