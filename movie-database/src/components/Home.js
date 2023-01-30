@@ -6,10 +6,13 @@ import '../scss/styles.scss';
 import { posterPath } from './movieVariables';
 import {API_KEY} from '../components/movieVariables';
 import ImageSlider from "./ImageSlider";
+import AddFavourite from "./Favourites";
 
 import {Link} from "react-router-dom";
 
 function Home() {
+  
+
 // state for managing fetched data
 const [movieData, setmovieData] = useState([]);
 
@@ -65,6 +68,8 @@ const containerStyles = {
   height: '200px',
   margin: '0 auto',
 }
+
+
     return(
       
       <div className="movie-data">

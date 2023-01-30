@@ -44,10 +44,37 @@
         padding-bottom: 1rem;
       }
 
-      img:hover{
-        filter: brightness(20%);
-        cursor: pointer;
+      .image-container{
+        position: relative;
+        transition: transform 0.2s;
       }
+
+      .image-container:hover{
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: 0.3s ease;
+
+        .poster{
+          filter: brightness(20%);
+
+        }
+      }
+
+      .movie-favourite{
+        position: relative;
+        z-index: 5;
+        top: 23.5%;
+        left: -35%;
+        scale: 0.3;
+      }
+
+      .movie-favourite:hover{
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: 0.3s ease;
+      }
+      
+     
     }
   }
 }
