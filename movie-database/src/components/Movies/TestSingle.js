@@ -4,27 +4,31 @@ import { useParams } from "react-router-dom";
 import { posterPath } from "../movieVariables";
 import {API_KEY} from '../movieVariables';
 const Single = () => {
-  const [movie, setMovie] = useState([]);
+  const [movieData, setmovieData] = useState({});
 
   const [rating, setRating] = useState(null);
 
   let { id } = useParams();
 
+
   let fetchMovie = async () => {
 
-    let results = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=api_key=${API_KEY}language=en-US`);
+    let results = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`);
     const jsonData = await results.json();
-    setMovie(jsonData);
+    setmovieData(jsonData);
     setRating(Math.round(jsonData.vote_average * 10));
   };
   useEffect(() => {
     fetchMovie();
-  }, [id]);
+  }, []);
+  
+
+  
   return (
     <div>
-      <h1>{movie.title}</h1>
+      <h1>{movieData.title}</h1>
       <div>
-        <img src={posterPath + movie.poster_path} alt={movie.title}></img>
+        <img src={posterPath + movieData.poster_path} alt={movieData.title}></img>
       </div>
       <div>
         <div className="rating">
@@ -34,14 +38,12 @@ const Single = () => {
       </div>
       <div>
         <h2>Overview</h2>
-        <p>{movie.overview}</p>
+        <p>{movieData.overview}</p>
       </div>
       <div>
-        <p>Released {movie.release_date}</p>
+        <p>Released {movieData.release_date}</p>
       </div>
-      <div>
-        <img src={posterPath + movie.backdrop_path} alt={movie.title}></img>
-      </div>
+      
     </div>
   );
 };
