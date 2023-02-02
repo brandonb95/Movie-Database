@@ -10,6 +10,7 @@ footer {
     background-color: $dark-bg-color;
     color: $white;
     margin-top: 18rem;
+    font-family: $body-font;
 
     .footer-main {
         display: flex;
@@ -26,7 +27,6 @@ footer {
         h1 {
             font-size: 1.25rem;
             font-weight: 400;
-            font-family: $logo-font;
         }
     
         li {

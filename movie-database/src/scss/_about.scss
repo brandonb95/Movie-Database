@@ -2,6 +2,7 @@
 
 body {
     background-color: $light-bg-color;
+    font-family: $body-font;
 }
 .about-content {
     text-align: center;
@@ -38,7 +39,7 @@ body {
         grid-template-columns: 1fr 40fr;
     
         img {
-            width: 18rem;
+            width: 15rem;
             margin-top: 15rem;
         }
     
