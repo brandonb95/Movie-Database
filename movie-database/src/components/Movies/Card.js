@@ -1,3 +1,5 @@
+import  Unselected  from '../../scss/Favourite-Unselected.svg';
+
 
 
 import {Link} from 'react-router-dom';
@@ -19,12 +21,13 @@ function Card({
     return (
         <div>
             <div className="card-poster">
-                <img src={"https://image.tmdb.org/t/p/w500" + posterPath} alt="Movie" />
-                {title}
+                <img className="single-poster" src={"https://image.tmdb.org/t/p/w500" + posterPath} alt="Movie" />
+                <img className="movie-favourite" src={Unselected} alt="Unfavourite" />
 
-            <p>{overview}</p>
-            <p>{releaseDate}</p>
-            <p>{`${voteAverage *10}%`}</p>
+                <div className="overview">{overview}</div>
+                <div className="card-title">{title}</div>
+                <div className="release-date">{releaseDate}</div>
+                <div className="average-score">{voteAverage}</div>
 
             <Link className="more-info-btn" to={`/single-movie/${id}`}>
                 More Info
