@@ -16,6 +16,7 @@ function Card({
         <div>
             <div className="card-poster">
                 <img src={"https://image.tmdb.org/t/p/w500" + posterPath} alt="Movie" />
+                <div className="overview">{overview}</div>
                 <div className="card-title">{title}</div>
                 <div className="release-date">{releaseDate}</div>
                 <div className="average-score">{voteAverage}</div>

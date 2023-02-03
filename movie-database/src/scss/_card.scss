@@ -43,6 +43,9 @@
     color: $sort-color-light;
 }
 
+
+// Hover Effect & Card Styling
+
 .card-poster {
     position: relative;
     list-style: none;
@@ -74,4 +77,18 @@
     .card-poster img:hover{
         filter: brightness(20%);
         transition: 0.3s ease;
+    }
+
+    // Overview
+
+    .overview{
+        position: absolute;
+        z-index: -1;
+        display: flex;
+        max-width: 100%;
+        padding: 10%;
+    }
+
+    .overview:hover{
+        z-index: 1;
     }
