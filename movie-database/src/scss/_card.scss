@@ -1,0 +1,15 @@
+@use "variables" as *;
+
+.average-score{
+    position: absolute;
+    // z-index: 99;
+    top: -5%;
+    right: 0%;
+    margin: 0 auto;
+    color: $white;
+    background-color: $theme-color;
+    padding: 1rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+
+}

@@ -17,7 +17,7 @@ function Card({
             <div className="card-poster">
                 <img src={"https://image.tmdb.org/t/p/w500" + posterPath} alt="Movie" />
                 {title}
-
+                <div className="average-score">{voteAverage}</div>
 
 
             </div>
