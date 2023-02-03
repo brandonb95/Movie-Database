@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { posterPath } from "../movieVariables";
 import {API_KEY} from '../movieVariables';
+
+import { addFavourite, removeFavourite } from '../Faves/favouritesSlice';
+
 const Single = () => {
   const [movieData, setmovieData] = useState({});
 
