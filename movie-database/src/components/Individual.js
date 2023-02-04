@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { API_KEY } from '';
 import MovieSingle from '../components/Movies/MovieSingle';
 import { useSelector } from 'react-redux';
-import isFavourite from '';
+import isFave from './movieVariables';
 
 const PageMovieSingle = () => {
 
@@ -37,7 +37,7 @@ const PageMovieSingle = () => {
       <>
         <section className="page-movie-single">
           {/* store the single movie data in a prop */}
-          {movieData !== false   && <MovieSingle movie={movieData} isFavourite={isFavourite(faves, null, movieData.id)}/>}
+          {movieData !== false   && <MovieSingle movie={movieData} isFave={isFave(faves, null, movieData.id)}/>}
         </section>
       </>
     );

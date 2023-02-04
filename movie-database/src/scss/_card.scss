@@ -102,11 +102,21 @@
         position: absolute;
         top: -10%;
         left: -5%;
+        width: 100%;
         max-width: 40%;
+        border: none;
+        background: none;
     }
 
     .movie-favourite:hover{
         transform: scale(1.1);
         transition: 0.3s ease;
         cursor: pointer;
+    }
+
+    .no-fav{
+        position: relative;
+        top: 10rem;
+        text-align: center;
+        padding: 5rem;
     }

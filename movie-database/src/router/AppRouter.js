@@ -19,8 +19,6 @@ function AppRouter() {
   <Routes>
     <Route path='/' exact element={<Home />}/>
     <Route path='/about' exact element={<About />}/>
-  </Routes>
-  <Routes>
     <Route path='/single-movie/:id' exact element={<TestSingle />}/>
     <Route path="/favourites" element={<PageFaves />} />
   </Routes>

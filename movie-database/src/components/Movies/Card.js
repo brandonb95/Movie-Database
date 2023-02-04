@@ -8,7 +8,6 @@ import {Link} from 'react-router-dom';
 
 
 function Card({
-    object,
     id,
     title,
     voteAverage,
@@ -26,12 +25,12 @@ function Card({
 
   const handleFaveClick = (addToFave, obj) => {
     if (addToFave === true) {
-        console.log('remove');
+        
           dispatch(removeFavourite(obj));
     } else {
-        console.log('add');
+       
           dispatch(addFavourite(obj));
-        console.log(obj);
+        
     }
   }
 
@@ -42,9 +41,9 @@ function Card({
 
             <div>
             { isFave ?
-              <FavBtn isFave={true} handleFaveClick={()=>handleFaveClick(isFave, movieObj)}/>
+              <FavBtn isFave={true} handleFaveClick={()=>handleFaveClick(isFave, movieObj)} className="movie-favourite"/>
               :
-              <FavBtn isFave={false} handleFaveClick={()=>handleFaveClick(isFave, movieObj)}/>
+              <FavBtn isFave={false} handleFaveClick={()=>handleFaveClick(isFave, movieObj)}className="movie-favourite"/>
             }
                 </div>
 

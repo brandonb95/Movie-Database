@@ -1,31 +1,48 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import Card from '../Movies/Card';
+import '../../scss/styles.scss';
+
+import isFave from '../movieVariables';
 
 const FavesContainer = () => {
   // grab isFaves() stored in state variable "value". Related to Redux
   const faves = useSelector((state) => state.favourites.value);
 
   return (
-    <div className="faves-container">
+    <>
       {faves.length < 1 ? (
-        <section className="empty-faves">
+        <section className='no-fav'>
           <p>
             Your favourites are empty! Go back to <Link to="/">home</Link> to start adding to your list.
           </p>
         </section>
       ) : (
-        <section>
-            <p>You have {faves.length} favourite(s).</p>
-          <div className="faves-grid">
+        <div className='movie-data fave-data'>
+        <div className='movie-list fave-data' >
+        <div className='movie-container fave-data'>
             {/* If faves array has items, map out individual movies */}
-            {faves.map((singleFave) => (
-              <Card key={singleFave.id} movie={singleFave} isFave={true}/>
+            {faves.map((movie) => (
+              <Card 
+              object={movie}
+              key={movie.id}
+      // this returns true or false
+              isFave={isFave(faves, null, movie.id)}
+              id={movie.id}
+              title={movie.title}
+              voteAverage={movie.vote_average}
+              overview={movie.overview}
+              posterPath={movie.poster_path}
+              releaseDate={movie.release_date}
+              movieObj ={movie}
+              />
             ))}
-          </div>
-        </section>
+        </div>
+        </div>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

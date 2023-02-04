@@ -1,6 +1,8 @@
 import {ReactComponent as HeartEmpty} from '../../scss/Favourite-Unselected.svg';
 import {ReactComponent as HeartFill} from '../../scss/Selected-Favourite.svg';
 
+import '../../scss/styles.scss';
+
 const FaveBtn = ({ movie, handleFaveClick, isFave }) => {
 
 
@@ -13,15 +15,15 @@ const FaveBtn = ({ movie, handleFaveClick, isFave }) => {
   }
 
   return (
-    <div className="fave-btn">
+    <div>
       { isFave === true ?
         <div title="Remove from favourites">
-          <button style={{width:'100%'}}onClick={handleRemoveFave}><HeartFill/>
+          <button className="movie-favourite"onClick={handleRemoveFave}><HeartFill/>
         </button>
         </div>
         :
         <div title="Add to favourites">
-          <button style={{width:'100%'}}onClick={handleAddFave}><HeartEmpty/></button>
+          <button className="movie-favourite" onClick={handleAddFave}><HeartEmpty/></button>
         </div>
       }
     </div>
