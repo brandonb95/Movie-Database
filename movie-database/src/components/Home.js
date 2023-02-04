@@ -40,6 +40,8 @@ useEffect(() =>{
 
 console.log(movieData)
 
+
+
 let cards = movieData.map((movie, i) => (
   <Card
       object={movieData[i]}
@@ -55,6 +57,9 @@ let cards = movieData.map((movie, i) => (
       // handleFavoriteClick={handleFavoriteButton}
   />
 ));
+
+
+
 
 // Create slides
 const slides =[

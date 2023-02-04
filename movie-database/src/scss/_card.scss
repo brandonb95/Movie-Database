@@ -2,14 +2,14 @@
 
 .average-score{
     position: absolute;
-    bottom: 5rem;
+    bottom: 0rem;
     right: 5%;
     margin: 0 auto;
     color: $white;
     background-color: $theme-color;
-    padding: 0.7rem;
+    padding: 7%;
     border-radius: 50%;
-    font-size: 1rem;
+    font-size: 150%;
 
 }
 
@@ -26,7 +26,7 @@
         right: 0;
         bottom: auto;
         padding: 1rem;
-        font-size: 1.7rem;
+        font-size: 1.1rem;
 
     }
 
@@ -35,8 +35,9 @@
 // 1344 px (Desktop)
 @media screen and (min-width: 84rem) {
     .average-score{
-        font-size: 1.3rem;
-
+        font-size: 1.1rem;
+        padding: 6%;
+        top: -5%;
     }
 
 }
@@ -56,8 +57,7 @@
     text-align: center;
     font-size: 13px;
     font-weight: 800;
-    max-width: 100%;
-    height: auto;
+    width: 100%;
     transition: transform 0.2s;
 
 
@@ -65,9 +65,47 @@
       margin: 0 auto;
       width: 90%;
       max-width: 20rem;
-      padding-bottom: 1rem;
       gap: 3rem;
+      
     }
+
+    // Overview
+
+    .overview{
+        color: $white;
+        position: absolute;
+        opacity: 0;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        height: 100%;
+        text-align: center;
+        padding: 2rem 0.6rem 0 0.6rem;
+        font-size: 0.8rem;
+        font-weight: 200;
+        line-height: 1rem;
+    }
+    
+
+    .overview:hover{
+        background-color: rgb(0, 0, 0, 0.7);
+        transition: 0.3s ease;
+        opacity: 1;    
+
+    }
+
+        // 480 px 
+@media screen and (min-width: 30rem) {
+    .overview{
+        font-size: 100%;
+        padding-top: 3rem;
+        line-height: 1.5rem;
+
+    }
+
+}
 
     }
 
@@ -77,32 +115,18 @@
         cursor: pointer;
     }
 
-    .card-poster .single-poster:hover{
-        filter: brightness(20%);
-        transition: 0.3s ease;
-    }
-
-    // Overview
-
-    .overview{
-        position: absolute;
-        z-index: -1;
-        display: flex;
-        max-width: 100%;
-        padding: 10%;
-    }
-
-    .overview:hover{
-        z-index: 1;
-    }
-
     // Favouriting Icon
 
     .movie-favourite{
+        background-color: transparent;
+        background-image: url('../scss/Favourite-Unselected.svg');
+        background-repeat: no-repeat;
         position: absolute;
         top: -10%;
         left: -5%;
-        max-width: 40%;
+        width: 35%;
+        height: 35%;
+        border: none;
     }
 
     .movie-favourite:hover{
@@ -110,3 +134,24 @@
         transition: 0.3s ease;
         cursor: pointer;
     }
+
+    // 768 px (Tablet)
+@media screen and (min-width: 48rem) {
+    .movie-favourite{
+        left: -1rem;
+        top: -9%;
+        width: 4rem;
+        height: 4rem;
+    }
+
+}
+
+// 1344 px (Desktop)
+@media screen and (min-width: 84rem) {
+    .movie-favourite{
+        left: -12%;
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+}
