@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { posterPath } from "../movieVariables";
 import {API_KEY} from '../movieVariables';
+
+
 import FavBtn from '../Faves/FaveBtn';
 import { useDispatch,useSelector } from 'react-redux';
 import { addFavourite, removeFavourite } from '../Faves/favouritesSlice';
