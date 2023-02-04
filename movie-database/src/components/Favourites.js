@@ -8,11 +8,16 @@ const AddFavourite = (props) => {
     return (
         <body>
             <div className="fav-wrapper">
-                <h1>Favourites</h1>
+                <h1>Your Favourites</h1>
+                <p>Heres a list of your favourite movies & shows!</p>
+
+                <div className="fav-movie-container">
+                    {/* <img className="movie-favourite" src={Unselected} alt="Unfavourite" faveComp={FavouriteComponent} />  */}
+                </div>
             </div>
         </body>
 
-        // <img className="movie-favourite" src={Unselected} alt="Unfavourite" faveComp={FavouriteComponent} /> 
+        
     )
 };
 
