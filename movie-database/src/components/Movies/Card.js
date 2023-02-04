@@ -32,7 +32,6 @@ function Card({
   // Change the length of movie overview
   useEffect(() => {
     const resizeWin = () => {
-        
       const changeOverview = window.innerWidth > 768 ? 100 : 500;
 
       oUpdate(changeOverview);
@@ -55,6 +54,7 @@ function Card({
 
       oUpdate(value);
     };
+
     window.addEventListener("resize", resizeWin);
   }, []);
 
@@ -64,46 +64,45 @@ function Card({
     <div>
       <div className="card-poster">
         <p>
-            {/* OVERVIEW IS THE CONTAINER FOR THE CARD HOVER STATES */}
+          {/* OVERVIEW IS THE CONTAINER FOR THE CARD HOVER STATES */}
           <div className="overview">
-          <div className="average-score">{voteAverage}</div>
-
-          <div>
-          {isFave ? (
-            <FavBtn
-              isFave={true}
-              handleFaveClick={() => handleFaveClick(isFave, movieObj)}
-              className="movie-favourite"
-            />
-          ) : (
-            <FavBtn
-              isFave={false}
-              handleFaveClick={() => handleFaveClick(isFave, movieObj)}
-              className="movie-favourite"
-            />
-          )}
-        </div>
-
+            <div className="average-score">{voteAverage}</div>
+            <div>
+              {isFave ? (
+                <FavBtn
+                  isFave={true}
+                  handleFaveClick={() => handleFaveClick(isFave, movieObj)}
+                  className="movie-favourite"
+                />
+              ) : (
+                <FavBtn
+                  isFave={false}
+                  handleFaveClick={() => handleFaveClick(isFave, movieObj)}
+                  className="movie-favourite"
+                />
+              )}
+            </div>
             <Link className="more-info-btn" to={`/single-movie/${id}`}>
               More Info
             </Link>
             {overview.substring(0, oView)}...
           </div>
         </p>
-        
+
         <img
           className="single-poster"
           src={"https://image.tmdb.org/t/p/w500" + posterPath}
           alt="Movie"
         />
 
-        
-
         {/* <div className="card-title">{title}</div>
                 <div className="release-date">{releaseDate}</div> */}
       </div>
       <div className="card-title">{title}</div>
       <div className="release-date">{releaseDate}</div>
+      <Link className="more-info-btn-mobile" to={`/single-movie/${id}`}>
+        More Info
+      </Link>
     </div>
   );
 }

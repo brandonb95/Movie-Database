@@ -13,11 +13,40 @@
 }
 
 .card-title {
-  height: 2rem;
-  margin: 0 1rem 1rem 1rem;
+  position: relative;
+  margin: 2rem 1rem 0rem 1rem;
+  text-align: center;
+  font-weight: 800;
   font-size: 1.1rem;
 }
 
+.release-date {
+    height: 2rem;
+    margin: 0.5rem 0 ;
+    text-align: center;
+    font-weight: 600;
+    color: $sort-color-light;
+  }
+
+  // More Info Mobile Button
+.more-info-btn-mobile {
+    display: block;
+    z-index: 5;
+    text-align: center;
+    background-color: $theme-color;
+    color: $white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    width: 70%;
+    margin: 0 auto;
+    padding: 0.6rem 0;
+  }
+
+  .more-info-btn-mobile:hover{
+    transition: 0.3s ease;
+    background-color: #af401f;
+  }
+  
 // 768 px (Tablet)
 @media screen and (min-width: 48rem) {
   .average-score {
@@ -27,6 +56,34 @@
     padding: 1rem;
     font-size: 1.1rem;
   }
+
+  .more-info-btn-mobile {
+    display: none;
+  }
+
+  // More Info Button
+
+  .more-info-btn {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 10%;
+    text-align: center;
+    background-color: $theme-color;
+    color: $white;
+    text-decoration: none;
+  }
+
+  .more-info-btn:hover{
+    transition: 0.3s ease;
+    background-color: #af401f;
+  }
+
 }
 
 // 1344 px (Desktop)
@@ -36,10 +93,6 @@
     padding: 6%;
     top: -5%;
   }
-}
-
-.release-date {
-  color: $sort-color-light;
 }
 
 // Hover Effect & Card Styling
@@ -80,29 +133,7 @@
     font-size: 0.8rem;
     font-weight: 200;
     line-height: 1rem;
-
-    // More Info Button
-
-  .more-info-btn {
-    position: absolute;
-    z-index: 5;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 10%;
-    text-align: center;
-    background-color: $theme-color;
-    color: $white;
-    text-decoration: none;
-  }
-
-  .more-info-btn:hover{
-    transition: 0.3s ease;
-    background-color: #af401f;
-  }
-
+  
   }
 
   .overview:hover {
@@ -128,7 +159,6 @@
   transition: 0.3s ease;
   cursor: pointer;
 }
-
 
 
 // Favouriting Icon
