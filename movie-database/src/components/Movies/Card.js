@@ -22,17 +22,23 @@ const [oView, oUpdate] = useState(0);
 useEffect(() => {
 
     const resizeWin = () => {
-    const changeOverview = window.innerWidth > 768 ? 100 : 10;
+    const changeOverview = window.innerWidth > 768 ? 100 : 500;
     
     oUpdate(changeOverview);
 
-    let value = 0;
+    let value = 50;
 
-    if(window.innerWidth > 1200){
-        value=2;
-    } else if(window.innerWidth > 1600){
-        value=6;
-    }
+    if(window.innerWidth > 1632){
+        value=200;
+    } else if(window.innerWidth > 1500){
+        value=100;
+    } else if(window.innerWidth > 1344){
+        value=70;
+    } else if(window.innerWidth > 1200){
+        value=250;
+    } else if(window.innerWidth > 1000){
+        value=230;
+    } 
 
     oUpdate(value);
 }
