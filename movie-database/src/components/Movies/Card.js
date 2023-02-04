@@ -46,7 +46,7 @@ useEffect(() => {
     
     oUpdate(changeOverview);
 
-    let value = 50;
+    let value = 100;
 
     if(window.innerWidth > 1632){
         value=200;
@@ -57,6 +57,8 @@ useEffect(() => {
     } else if(window.innerWidth > 1200){
         value=250;
     } else if(window.innerWidth > 1000){
+        value=230;
+    } else if(window.innerWidth > 500){
         value=230;
     } 
 
@@ -84,9 +86,8 @@ console.log(oView);
             }
                 </div>
 
-                <div className="overview">{overview}</div>
-                <div className="card-title">{title}</div>
-                <div className="release-date">{releaseDate}</div>
+                {/* <div className="card-title">{title}</div>
+                <div className="release-date">{releaseDate}</div> */}
                 <div className="average-score">{voteAverage}</div>
 
             <Link className="more-info-btn" to={`/single-movie/${id}`}>
