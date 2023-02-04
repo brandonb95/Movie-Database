@@ -21,32 +21,32 @@
 }
 
 .release-date {
-    height: 2rem;
-    margin: 0.5rem 0 ;
-    text-align: center;
-    font-weight: 600;
-    color: $sort-color-light;
-  }
+  height: 2rem;
+  margin: 0.5rem 0;
+  text-align: center;
+  font-weight: 600;
+  color: $sort-color-light;
+}
 
-  // More Info Mobile Button
+// More Info Mobile Button
 .more-info-btn-mobile {
-    display: block;
-    z-index: 5;
-    text-align: center;
-    background-color: $theme-color;
-    color: $white;
-    text-decoration: none;
-    font-size: 1.5rem;
-    width: 70%;
-    margin: 0 auto;
-    padding: 0.6rem 0;
-  }
+  display: block;
+  z-index: 5;
+  text-align: center;
+  background-color: $theme-color;
+  color: $white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  width: 70%;
+  margin: 0 auto;
+  padding: 0.6rem 0;
+}
 
-  .more-info-btn-mobile:hover{
-    transition: 0.3s ease;
-    background-color: #af401f;
-  }
-  
+.more-info-btn-mobile:hover {
+  transition: 0.3s ease;
+  background-color: #af401f;
+}
+
 // 768 px (Tablet)
 @media screen and (min-width: 48rem) {
   .average-score {
@@ -79,11 +79,10 @@
     text-decoration: none;
   }
 
-  .more-info-btn:hover{
+  .more-info-btn:hover {
     transition: 0.3s ease;
     background-color: #af401f;
   }
-
 }
 
 // 1344 px (Desktop)
@@ -109,6 +108,7 @@
   transition: transform 0.2s;
 
   .single-poster {
+    z-index: -1;
     margin: 0 auto;
     width: 90%;
     max-width: 20rem;
@@ -133,7 +133,11 @@
     font-size: 0.8rem;
     font-weight: 200;
     line-height: 1rem;
-  
+  }
+
+  .average-score {
+    position: absolute;
+    z-index: 99;
   }
 
   .overview:hover {
@@ -150,8 +154,6 @@
       line-height: 1.5rem;
     }
   }
-
-  
 }
 
 .card-poster:hover {
@@ -160,7 +162,6 @@
   cursor: pointer;
 }
 
-
 // Favouriting Icon
 
 .movie-favourite {
@@ -168,8 +169,9 @@
   background-image: url("../scss/Favourite-Unselected.svg");
   background-repeat: no-repeat;
   position: absolute;
+  z-index: 99;
   top: -10%;
-  left: -5%;
+  left: -2%;
   width: 100%;
   max-width: 40%;
   border: none;
@@ -194,7 +196,7 @@
 // 768 px (Tablet)
 @media screen and (min-width: 48rem) {
   .movie-favourite {
-    left: -1rem;
+    left: -1%;
     top: -9%;
     width: 4rem;
     height: 4rem;
@@ -204,7 +206,7 @@
 // 1344 px (Desktop)
 @media screen and (min-width: 84rem) {
   .movie-favourite {
-    left: -12%;
+    left: -2%;
     width: 3.5rem;
     height: 3.5rem;
   }

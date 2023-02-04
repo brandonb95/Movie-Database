@@ -63,11 +63,7 @@ function Card({
   return (
     <div>
       <div className="card-poster">
-        <p>
-          {/* OVERVIEW IS THE CONTAINER FOR THE CARD HOVER STATES */}
-          <div className="overview">
-            <div className="average-score">{voteAverage}</div>
-            <div>
+      <div className="average-score">{voteAverage}</div>
               {isFave ? (
                 <FavBtn
                   isFave={true}
@@ -81,11 +77,18 @@ function Card({
                   className="movie-favourite"
                 />
               )}
+
+        <p>
+          {/* OVERVIEW IS THE CONTAINER FOR THE CARD HOVER STATES */}
+          <div className="overview">
+            
+            
+              <Link className="more-info-btn" to={`/single-movie/${id}`}>
+                More Info
+              </Link>
+              <div className="info">
+              {overview.substring(0, oView)}...
             </div>
-            <Link className="more-info-btn" to={`/single-movie/${id}`}>
-              More Info
-            </Link>
-            {overview.substring(0, oView)}...
           </div>
         </p>
 
