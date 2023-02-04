@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import MovieCard from '../Movies/Card';
+import Card from '../Movies/Card';
 
 const FavesContainer = () => {
   // grab isFaves() stored in state variable "value". Related to Redux
@@ -20,7 +20,7 @@ const FavesContainer = () => {
           <div className="faves-grid">
             {/* If faves array has items, map out individual movies */}
             {faves.map((singleFave) => (
-              <MovieCard key={singleFave.id} movie={singleFave} isFavourite={true}/>
+              <Card key={singleFave.id} movie={singleFave} isFave={true}/>
             ))}
           </div>
         </section>

@@ -28,6 +28,7 @@ export const favouritesSlice = createSlice({
     // Add functions that will manipulate the state
     addFavourite: (state, action) => {
         const newFaves = [...state.value, action.payload];
+        console.log(action.payload);
         //store newFaves array into local storage
         localStorage.setItem('movieFaves', JSON.stringify(newFaves));
         state.value = newFaves;

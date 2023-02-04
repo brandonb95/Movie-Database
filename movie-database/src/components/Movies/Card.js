@@ -1,5 +1,7 @@
-import  Unselected  from '../../scss/Favourite-Unselected.svg';
-
+import React from 'react';
+import FavBtn from '../Faves/FaveBtn';
+import { addFavourite, removeFavourite } from '../Faves/favouritesSlice';
+import { useDispatch } from 'react-redux';
 
 
 import {Link} from 'react-router-dom';
@@ -14,15 +16,37 @@ function Card({
     posterPath,
     releaseDate,
     movieObj,
-    isFav,
+    isFave,
+    
     
 }) {
+
+     // Redux related for favouriting funciton
+  const dispatch = useDispatch();
+
+  const handleFaveClick = (addToFave, obj) => {
+    if (addToFave === true) {
+        console.log('remove');
+          dispatch(removeFavourite(obj));
+    } else {
+        console.log('add');
+          dispatch(addFavourite(obj));
+        console.log(obj);
+    }
+  }
 
     return (
         <div>
             <div className="card-poster">
                 <img className="single-poster" src={"https://image.tmdb.org/t/p/w500" + posterPath} alt="Movie" />
-                <img className="movie-favourite" src={Unselected} alt="Unfavourite" />
+
+            <div>
+            { isFave ?
+              <FavBtn isFave={true} handleFaveClick={()=>handleFaveClick(isFave, movieObj)}/>
+              :
+              <FavBtn isFave={false} handleFaveClick={()=>handleFaveClick(isFave, movieObj)}/>
+            }
+                </div>
 
                 <div className="overview">{overview}</div>
                 <div className="card-title">{title}</div>
