@@ -94,8 +94,6 @@ console.log(oView);
             </Link>
 
             
-                <button className="movie-favourite"></button>
-                <div className="average-score">{voteAverage}</div>
             </div>
             <div className="card-title">{title}</div>
             <div className="release-date">{releaseDate}</div>
