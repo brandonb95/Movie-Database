@@ -1,1 +1,19 @@
 @use "variables" as *;
+
+body {
+    font-family: $body-font;
+    text-align: center;
+
+    .fav-wrapper {
+
+    
+     h1{
+        margin: auto;
+        padding: 10rem 0 1.5rem 0;
+        font-family: $logo-font;
+        border-bottom: $dark-bg-color solid 2px;
+        width: 60%;
+        
+    }
+    }
+}
