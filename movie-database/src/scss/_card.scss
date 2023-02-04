@@ -124,10 +124,6 @@
         position: absolute;
         top: -10%;
         left: -5%;
-        width: 100%;
-        max-width: 40%;
-        border: none;
-        background: none;
         width: 35%;
         height: 35%;
         border: none;
@@ -139,12 +135,6 @@
         cursor: pointer;
     }
 
-    .no-fav{
-        position: relative;
-        top: 10rem;
-        text-align: center;
-        padding: 5rem;
-    }
     // 768 px (Tablet)
 @media screen and (min-width: 48rem) {
     .movie-favourite{
@@ -165,3 +155,4 @@
     }
 
 }
+

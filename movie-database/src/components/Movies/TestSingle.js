@@ -55,9 +55,9 @@ const Single = () => {
       <div>
       <div>
             { isFavorite ?
-              <FavBtn isFave={true} handleFaveClick={()=>handleFaveClick(isFavorite, movieData)} className="movie-favourite"/>
+              <FavBtn isFavorite={true} handleFaveClick={()=>handleFaveClick(isFavorite, movieData)} className="movie-favourite"/>
               :
-              <FavBtn isFave={false} handleFaveClick={()=>handleFaveClick(isFavorite, movieData)}className="movie-favourite"/>
+              <FavBtn isFavorite={false} handleFaveClick={()=>handleFaveClick(isFavorite, movieData)}className="movie-favourite"/>
             }
                 </div>
 
