@@ -6,7 +6,10 @@ import '../scss/styles.scss';
 import { posterPath } from './movieVariables';
 import {API_KEY} from '../components/movieVariables';
 import ImageSlider from "./ImageSlider";
-import AddFavourite from "./Favourites";
+
+
+import { useSelector } from "react-redux";
+import isFave from './movieVariables';
 
 import {Link} from "react-router-dom";
 
@@ -40,20 +43,20 @@ useEffect(() =>{
 
 console.log(movieData)
 
-
-
+const favs = useSelector((state) => state.favourites.value);
 let cards = movieData.map((movie, i) => (
   <Card
       object={movieData[i]}
       key={movie.id}
       // this returns true or false
-      // fav={favs.includes(movie.id)}
+      isFave={isFave(favs, null, movie.id)}
       id={movie.id}
       title={movie.title}
       voteAverage={movie.vote_average}
       overview={movie.overview}
       posterPath={movie.poster_path}
       releaseDate={movie.release_date}
+      movieObj ={movie}
       // handleFavoriteClick={handleFavoriteButton}
   />
 ));
