@@ -2,14 +2,111 @@
 
 .average-score{
     position: absolute;
-    // z-index: 99;
-    top: -5%;
-    right: 0%;
+    bottom: 5rem;
+    right: 5%;
     margin: 0 auto;
     color: $white;
     background-color: $theme-color;
-    padding: 1rem;
+    padding: 0.7rem;
     border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 1rem;
 
 }
+
+.card-title{
+    height: 2rem;
+    margin: 0 1rem 1rem 1rem;
+    font-size: 1.1rem;
+}
+
+// 768 px (Tablet)
+@media screen and (min-width: 48rem) {
+    .average-score{
+        top:-1rem;
+        right: 0;
+        bottom: auto;
+        padding: 1rem;
+        font-size: 1.7rem;
+
+    }
+
+}
+
+// 1344 px (Desktop)
+@media screen and (min-width: 84rem) {
+    .average-score{
+        font-size: 1.3rem;
+
+    }
+
+}
+
+.release-date{
+    color: $sort-color-light;
+}
+
+
+// Hover Effect & Card Styling
+
+.card-poster {
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 800;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.2s;
+
+
+    .single-poster {
+      margin: 0 auto;
+      width: 90%;
+      max-width: 20rem;
+      padding-bottom: 1rem;
+      gap: 3rem;
+    }
+
+    }
+
+    .card-poster:hover{
+        transform: scale(1.1);
+        transition: 0.3s ease;
+        cursor: pointer;
+    }
+
+    .card-poster .single-poster:hover{
+        filter: brightness(20%);
+        transition: 0.3s ease;
+    }
+
+    // Overview
+
+    .overview{
+        position: absolute;
+        z-index: -1;
+        display: flex;
+        max-width: 100%;
+        padding: 10%;
+    }
+
+    .overview:hover{
+        z-index: 1;
+    }
+
+    // Favouriting Icon
+
+    .movie-favourite{
+        position: absolute;
+        top: -10%;
+        left: -5%;
+        max-width: 40%;
+    }
+
+    .movie-favourite:hover{
+        transform: scale(1.1);
+        transition: 0.3s ease;
+        cursor: pointer;
+    }

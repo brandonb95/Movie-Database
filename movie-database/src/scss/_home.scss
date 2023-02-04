@@ -26,58 +26,9 @@
     margin-top: 5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem 0;
+    gap: 3rem 2rem;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 
-    .card-poster {
-      position: relative;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      font-size: 13px;
-      font-weight: 800;
-      max-width: 100%;
-
-      img {
-        margin: 0 auto;
-        width: 90%;
-        max-width: 20rem;
-        padding-bottom: 1rem;
-      }
-
-      .image-container{
-        position: relative;
-        transition: transform 0.2s;
-      }
-
-      .image-container:hover{
-        cursor: pointer;
-        transform: scale(1.1);
-        transition: 0.3s ease;
-
-        .poster{
-          filter: brightness(20%);
-
-        }
-      }
-
-      .movie-favourite{
-        position: relative;
-        z-index: 5;
-        top: 23.5%;
-        left: -35%;
-        scale: 0.3;
-      }
-
-      .movie-favourite:hover{
-        cursor: pointer;
-        transform: scale(1.1);
-        transition: 0.3s ease;
-      }
-      
-     
-    }
   }
 }
 
