@@ -11,7 +11,7 @@ import PageFaves from "../components/Favourites";
 function AppRouter() {
   
   return(
-<BrowserRouter>
+<BrowserRouter basename={'/movie-database'}>
 <div className='wrapper'>
   
 <title>Sunset Movies</title>

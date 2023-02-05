@@ -1,4 +1,5 @@
 import  logo  from '../scss/logo.svg';
+import  tmdb  from '../scss/tmdb-logo.png';
 import '../scss/styles.scss';
 
 const About = () => {
@@ -19,6 +20,11 @@ return (
             <p>The developers of Sunset Movies are passionate about making your entertainment experience enjoyable. The team consists of three developers who share a passion for film and media. </p>
 
             <h4>Sunset Movies is here to help you find your new favourite story</h4>
+
+            <div className='credits'>
+            <p><i>This product uses the TMDb API but is not endorsed or certified by <b>TMDb.</b></i></p>
+            <img className='tmdb-logo' src={tmdb} alt="The Movie Database" />
+            </div>
         </div>
     </div>
     </body>

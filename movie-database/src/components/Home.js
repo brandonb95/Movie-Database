@@ -68,19 +68,18 @@ function Home() {
       posterPath={movie.poster_path}
       releaseDate={movie.release_date}
       movieObj={movie}
-      // handleFavoriteClick={handleFavoriteButton}
     />
   ));
 
   // Create slides
   const slides = [
-    { url: "http://localhost:3000/carousel-image-1.jpg", title: "Spider-Man" },
+    { url: "http://brandonbirk.ca/movie-database/carousel-image-1.jpg", title: "Spider-Man" },
     {
-      url: "http://localhost:3000/carousel-image-2.jpg",
+      url: "http://brandonbirk.ca/movie-database/carousel-image-2.jpg",
       title: "After Ever Happy",
     },
     {
-      url: "http://localhost:3000/carousel-image-3.jpg",
+      url: "http://brandonbirk.ca/movie-database/carousel-image-3.jpg",
       title: "The Woman King",
     },
   ];
@@ -96,15 +95,6 @@ function Home() {
       <div style={containerStyles}>
         <ImageSlider slides={slides} />
       </div>
-
-      {/* <section className="movie-list">
-          <select onChange={changeFilter} name="filterSelector" id="filterSelector">
-          <option value="popular">Popular</option>
-          <option value="now_playing">Now Playing</option>
-          <option value="top_rated">Top Rated</option>
-          <option value="upcoming">Upcoming</option>
-          </select>
-        </section> */}
 
 <div className="movie-filter-container">
       {oView === true ? 

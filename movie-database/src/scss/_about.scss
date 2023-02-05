@@ -27,6 +27,15 @@ body {
         color: $sort-color;
         text-align: left;
     }
+
+    .credits{
+        margin-top: 2rem;
+        .tmdb-logo{
+        max-width: 4rem;
+        text-align: left;
+        margin-top: 2rem;
+        }
+    }
 }
 
 @media screen and (min-width: 31.25rem) {
