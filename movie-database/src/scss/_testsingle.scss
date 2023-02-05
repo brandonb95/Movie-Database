@@ -5,7 +5,8 @@
         grid-template-columns: 15rem;
         justify-content: center;
     padding: 8rem 3rem 0 3rem;
-    margin-bottom: -10rem;
+    margin-bottom: -15rem;
+    
 
     .poster {
 
@@ -21,8 +22,14 @@
 
         h1 {
             font-family: $logo-font;
+            color: $sort-color;
             padding: 2rem 0 1rem 0;
     
+        }
+
+        h3 {
+            color: $sort-color;
+            padding-top: 1rem;
         }
     
         .release-rating {
@@ -37,7 +44,7 @@
         .movie-overview {
             p{
                 font-size: .75rem;
-                padding-top: 1rem;
+                padding-top: .75rem;
             }
         }
 
@@ -66,27 +73,32 @@
 
         img {
             width: 18rem;
-            padding-top: 5rem;
+            padding-top: 4rem;
         }
     }
 
     .release-rating {
+        flex-direction: column;
         .rating {
-            font-size: 1rem;
+            font-size: 2rem;
             padding-right: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: rgba(128, 128, 128, 0.838) solid 2px;
         }
     }
 
     .content-wrapper {
         padding-left: 5rem;
-        padding-top: 2.5rem;
+        padding-top: 2.75rem;
 
         h1 {
-            font-size: 2.25rem;
+            font-size: 2.3rem;
         }
         
         .movie-overview p {
             font-size: 1rem;
+            color: $sort-color;
+            padding-top: .75rem;
         }
     }
     }
@@ -95,6 +107,21 @@
 // 1344 px (Desktop)
 @media screen and (min-width: 84rem) {
     .individual-wrapper {
+            display: grid;
+            grid-template-columns: 1fr fit-content(40%) 1fr;
+            justify-content: center;
         margin-bottom: -25rem;
+
+        .poster {
+            img {
+                margin-left: 15rem;
+            }
+        }
+
+        .content-wrapper {
+            .movie-overview p {
+                padding-right: 5rem;
+            }
+        }
     }
 }

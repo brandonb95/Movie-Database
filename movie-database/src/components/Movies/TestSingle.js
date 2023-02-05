@@ -70,7 +70,7 @@ const Single = () => {
         </section>
 
         <div className="movie-overview">
-          {/* <h2>Overview</h2> */}
+          <h3>Overview</h3>
           <p>{movieData.overview}</p>
         </div>
 
