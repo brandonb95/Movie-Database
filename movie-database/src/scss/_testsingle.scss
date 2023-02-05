@@ -38,6 +38,10 @@
     
             .rating{
                 color: $theme-color;
+
+                p{
+                  padding-top: .5rem;  
+                }
             }
         }
     
@@ -79,6 +83,10 @@
 
     .release-rating {
         flex-direction: column;
+
+        .release-date {
+            text-align: left;
+        }
         .rating {
             font-size: 2rem;
             padding-right: 1rem;

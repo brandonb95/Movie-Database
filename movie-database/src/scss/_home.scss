@@ -9,11 +9,7 @@
   .movie-list {
     position: relative;
     top: 9rem;
-
-    .card-title {
-      margin-top: 1rem;
   }
-  } 
 
   // Filter
   .movie-filter-container {
@@ -59,9 +55,9 @@
         cursor: pointer;
       }
     }
+  }
 
   #filterSelector {
-   main {
     background-color: $sort-color;
     color: $white;
     width: 9rem;
@@ -80,7 +76,6 @@
     gap: 3rem 1rem;
     font-family: "Roboto", Arial, Helvetica, sans-serif;
   }
-}
 }
 
 .container-slider {
@@ -264,4 +259,3 @@
 .movie-data .fave-data {
   top: 5rem;
 }
-  }
