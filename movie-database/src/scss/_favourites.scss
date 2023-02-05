@@ -9,7 +9,7 @@ body {
     
         h1{
             margin: auto;
-            padding: 10rem 0 .5rem 0;
+            padding: 12rem 0 .5rem 0;
             font-family: $logo-font;
             
         }
@@ -19,6 +19,10 @@ body {
             border-bottom: $dark-bg-color solid 2px;
             width: 60%;
             padding-bottom: .75rem;
+        }
+
+        .faves-page p{
+            border-bottom: none;
         }
     }
 }

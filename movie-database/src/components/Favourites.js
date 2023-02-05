@@ -6,7 +6,7 @@ const PageFaves = () => {
             <div className="fav-wrapper">
                 <h1>Your Favourites</h1>
                 <p>Heres a list of your favourite movies & shows!</p>
-
+                
                 <section className='faves-page'>
                     <FavesContainer />
                 </section>

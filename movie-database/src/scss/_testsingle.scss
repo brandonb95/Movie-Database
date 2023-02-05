@@ -1,0 +1,100 @@
+@use "variables" as *;
+
+.individual-wrapper {
+    display: grid;
+        grid-template-columns: 15rem;
+        justify-content: center;
+    padding: 8rem 3rem 0 3rem;
+    margin-bottom: -10rem;
+
+    .poster {
+
+        img {
+            width: 15rem;
+        }
+
+    }
+
+
+    .content-wrapper {
+        text-align: left;
+
+        h1 {
+            font-family: $logo-font;
+            padding: 2rem 0 1rem 0;
+    
+        }
+    
+        .release-rating {
+            display: flex;
+            justify-content: space-between;
+    
+            .rating{
+                color: $theme-color;
+            }
+        }
+    
+        .movie-overview {
+            p{
+                font-size: .75rem;
+                padding-top: 1rem;
+            }
+        }
+
+        .movie-favourite {
+            position: static;
+            width: 3rem;
+            
+            svg {
+                padding: 1rem 0 0 0;
+                margin-left: -.5rem;
+            }
+
+    }
+}
+}
+
+// 768 px (Tablet)
+@media screen and (min-width: 48rem) {
+    .individual-wrapper {
+        display: grid;
+            grid-template-columns: 1fr fit-content(50%) 1fr;
+            justify-content: center;
+            margin-bottom: -15rem;
+
+    .poster {
+
+        img {
+            width: 18rem;
+            padding-top: 5rem;
+        }
+    }
+
+    .release-rating {
+        .rating {
+            font-size: 1rem;
+            padding-right: 1rem;
+        }
+    }
+
+    .content-wrapper {
+        padding-left: 5rem;
+        padding-top: 2.5rem;
+
+        h1 {
+            font-size: 2.25rem;
+        }
+        
+        .movie-overview p {
+            font-size: 1rem;
+        }
+    }
+    }
+}
+
+// 1344 px (Desktop)
+@media screen and (min-width: 84rem) {
+    .individual-wrapper {
+        margin-bottom: -25rem;
+    }
+}
