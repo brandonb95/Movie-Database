@@ -5,7 +5,7 @@ import { posterPath } from "../movieVariables";
 import {API_KEY} from '../movieVariables';
 
 
-import FavBtn from '../Faves/FaveBtn';
+import FaveBtn from '../Faves/FaveBtn';
 import { useDispatch,useSelector } from 'react-redux';
 import { addFavourite, removeFavourite } from '../Faves/favouritesSlice';
 import isFave from '../movieVariables';
@@ -55,13 +55,13 @@ const Single = () => {
         <img src={posterPath + movieData.poster_path} alt={movieData.title}></img>
       </div>
       <div>
-      <div>
-            { isFavorite ?
-              <FavBtn isFavorite={true} handleFaveClick={()=>handleFaveClick(isFavorite, movieData)} className="movie-favourite"/>
+        <div>
+            { isFavorite ? 
+              <FaveBtn isFavorite={true} handleFaveClick={()=>handleFaveClick(isFavorite, movieData)} className="movie-favourite"/>
               :
-              <FavBtn isFavorite={false} handleFaveClick={()=>handleFaveClick(isFavorite, movieData)}className="movie-favourite"/>
+              <FaveBtn isFavorite={false} handleFaveClick={()=>handleFaveClick(isFavorite, movieData)}className="movie-favourite"/>
             }
-                </div>
+         </div>
 
         <div className="rating">
           <p>{rating}%</p>

@@ -23,7 +23,8 @@ const FaveBtn = ({ movie, handleFaveClick, isFave }) => {
         </div>
         :
         <div title="Add to favourites">
-          <button className="movie-favourite" onClick={handleAddFave}><HeartEmpty/></button>
+          <button className="movie-favourite" onClick={handleAddFave}><HeartEmpty/>
+          </button>
         </div>
       }
     </div>
