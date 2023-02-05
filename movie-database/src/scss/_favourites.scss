@@ -5,11 +5,11 @@ body {
     text-align: center;
 
     .fav-wrapper {
-
+        margin-bottom:-5rem;
     
         h1{
             margin: auto;
-            padding: 12rem 0 .5rem 0;
+            padding: 10rem 0 .5rem 0;
             font-family: $logo-font;
             
         }
@@ -21,8 +21,32 @@ body {
             padding-bottom: .75rem;
         }
 
-        .faves-page p{
-            border-bottom: none;
+        .faves-page {
+            margin-top: -13rem;
+            p{
+                border-bottom: none;
+            }
+        }
+        
+   
+    }
+}
+
+// 768 px (Tablet)
+@media screen and (min-width: 48rem) {
+
+body {
+    .fav-wrapper {
+        h1{
+            font-size: 2.25rem;
+        }
+
+        .faves-page {
+            margin-top: -11rem;
         }
     }
 }
+
+}
+
+
