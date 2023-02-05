@@ -16,12 +16,16 @@ body {
 
     h1, h2, h3, h4 {
         padding-top: 2rem;
+        color: rgb(69, 69, 69)
+        
     }
 
     p {
-        padding-top: 2rem;
+        padding: 2rem 1rem 0 2.5rem;
         font-size: 1.1rem;
         line-height: 1.5rem;
+        color: $sort-color;
+        text-align: left;
     }
 }
 
@@ -45,6 +49,7 @@ body {
     
         h1 {
             padding-top: 12rem;
+            font-size: 2.25rem;
         }
     
         p {

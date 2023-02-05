@@ -9,6 +9,10 @@
 .movie-list {
   position: relative;
   top: 9rem;
+
+  .card-title {
+    margin-top: 1rem;
+}
 }
   #filterSelector{
     background-color: $sort-color;
