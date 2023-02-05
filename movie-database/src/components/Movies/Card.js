@@ -27,7 +27,7 @@ function Card({
       dispatch(addFavourite(obj));
     }
   };
-  const [oView, oUpdate] = useState(0);
+  const [oView, oUpdate] = useState(100);
 
   // Change the length of movie overview
   useEffect(() => {
@@ -54,6 +54,7 @@ function Card({
 
       oUpdate(value);
     };
+
     window.addEventListener("resize", resizeWin);
   }, []);
 
@@ -62,47 +63,49 @@ function Card({
   return (
     <div>
       <div className="card-poster">
+      <div className="average-score">{voteAverage}</div>
+              {isFave ? (
+                <FavBtn
+                  isFave={true}
+                  handleFaveClick={() => handleFaveClick(isFave, movieObj)}
+                  className="movie-favourite"
+                />
+              ) : (
+                <FavBtn
+                  isFave={false}
+                  handleFaveClick={() => handleFaveClick(isFave, movieObj)}
+                  className="movie-favourite"
+                />
+              )}
+
         <p>
-            {/* OVERVIEW IS THE CONTAINER FOR THE CARD HOVER STATES */}
+          {/* OVERVIEW IS THE CONTAINER FOR THE CARD HOVER STATES */}
           <div className="overview">
-          <div className="average-score">{voteAverage}</div>
-
-          <div>
-          {isFave ? (
-            <FavBtn
-              isFave={true}
-              handleFaveClick={() => handleFaveClick(isFave, movieObj)}
-              className="movie-favourite"
-            />
-          ) : (
-            <FavBtn
-              isFave={false}
-              handleFaveClick={() => handleFaveClick(isFave, movieObj)}
-              className="movie-favourite"
-            />
-          )}
-        </div>
-
-            <Link className="more-info-btn" to={`/single-movie/${id}`}>
-              More Info
-            </Link>
-            {overview.substring(0, oView)}...
+            
+            
+              <Link className="more-info-btn" to={`/single-movie/${id}`}>
+                More Info
+              </Link>
+              <div className="info">
+              {overview.substring(0, oView)}...
+            </div>
           </div>
         </p>
-        
+
         <img
           className="single-poster"
           src={"https://image.tmdb.org/t/p/w500" + posterPath}
           alt="Movie"
         />
 
-        
-
         {/* <div className="card-title">{title}</div>
                 <div className="release-date">{releaseDate}</div> */}
       </div>
       <div className="card-title">{title}</div>
       <div className="release-date">{releaseDate}</div>
+      <Link className="more-info-btn-mobile" to={`/single-movie/${id}`}>
+        More Info
+      </Link>
     </div>
   );
 }
