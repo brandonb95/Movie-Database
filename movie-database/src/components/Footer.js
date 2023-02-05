@@ -11,17 +11,17 @@ const Footer = ({ title }) => {
         <section className="footer-main">
         
             <div className="logo-desc">
-            <div className="footer-logo">
-                <img src={logo} alt="Sunset Logo" />
-            </div>
-
-                <p className="footer-desc">Sunset Movies is credible source for movies, TV shows, celebrity content. Find ratings and reviews for the latest movies.</p>
+                <div className="footer-logo">
+                    <img src={logo} alt="Sunset Logo" />
+                </div>
+                <div>
+                    <h1><Link to="/">{title}</Link></h1>
+                    <p className="footer-desc">Sunset Movies is credible source for movies, TV shows, celebrity content. Find ratings and reviews for the latest movies.</p>
+                </div>
             </div>
 
 
         <div className="footer-content">
-
-            <h1><Link to="/">{title}</Link></h1>
 
             <nav className="footer-nav">
             <ul>

@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Home from "../components/Home";
 import TestSingle from "../components/Movies/TestSingle";
 import About from "../components/About";
+import Favourites from "../components/Favourites";
 import Footer from "../components/Footer";
 import PageFaves from "../components/Favourites";
 

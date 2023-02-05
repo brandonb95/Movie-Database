@@ -6,58 +6,15 @@
   top: 5.6rem;
   z-index: 9;
 
-  .movie-list {
-    position: relative;
-    top: 9rem;
-  }
+.movie-list {
+  position: relative;
+  top: 9rem;
 
-  // Filter
-  .movie-filter-container {
-    position: relative;
-    text-align: right;
-  }
-
-  // 768 px Tablet
-  @media screen and (min-width: 48rem) {
-    .movie-filter-container {
-      margin-right: 8rem;
-
-      input[type="radio"] {
-        opacity: 0;
-      }
-
-      input[type="radio"]:checked + label {
-        background-color: $sort-color;
-      }
-
-      input[type="radio"]:focus + label {
-        color: $white;
-      }
-
-      label {
-        display: inline-block;
-        // background-color: $dark-bg-color;
-        padding: 10px 20px;
-        font-family: sans-serif, Arial;
-        font-size: 16px;
-        border-radius: 4px;
-      }
-
-      label:checked{
-        color: $white;
-
-      }
-
-      label:hover {
-        background-color: $sort-color;
-        color: $white;
-        transition: 0.3s ease;
-        cursor: pointer;
-      }
-    }
-  }
-
-  #filterSelector {
+  .card-title {
+    margin-top: 1rem;
+}
+}
+  #filterSelector{
     background-color: $sort-color;
     color: $white;
     width: 9rem;

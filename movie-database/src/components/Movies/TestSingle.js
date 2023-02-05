@@ -49,35 +49,34 @@ const Single = () => {
   const isFavorite = isFave(faves, null, movieData.id);
   
   return (
-    <div>
-      <h1>{movieData.title}</h1>
-      <div>
-        <img src={posterPath + movieData.poster_path} alt={movieData.title}></img>
-      </div>
-      <div>
-      <div>
-            { isFavorite ?
-              <FavBtn isFavorite={true} handleFaveClick={()=>handleFaveClick(isFavorite, movieData)} className="movie-favourite"/>
-              :
-              <FavBtn isFavorite={false} handleFaveClick={()=>handleFaveClick(isFavorite, movieData)}className="movie-favourite"/>
-            }
-                </div>
-
-        <div className="rating">
-          <p>{rating}%</p>
+    <div className="individual-wrapper">
+      <div className="poster">
+        <div>
+          <img src={posterPath + movieData.poster_path} alt={movieData.title}></img>
         </div>
-        
       </div>
-      <div>
-        <h2>Overview</h2>
-        <p>{movieData.overview}</p>
-      </div>
-      <div>
-        <p>Released {movieData.release_date}</p>
-      </div>
-
-
-      
+      <section className="content-wrapper">
+        <h1>{movieData.title}</h1>
+        <section className="release-rating">
+          <div className="release-date">
+            <p>Released {movieData.release_date}</p>
+          </div>
+          <div className="rating">
+              <p>{rating}%</p>
+          </div>
+        </section>
+        <div className="movie-overview">
+          <h3>Overview</h3>
+          <p>{movieData.overview}</p>
+        </div>
+        <div className="fav-button">
+                { isFavorite ?
+                  <FavBtn isFave={true} handleFaveClick={()=>handleFaveClick(isFavorite, movieData)} className="movie-favourite"/>
+                  :
+                  <FavBtn isFave={false} handleFaveClick={()=>handleFaveClick(isFavorite, movieData)}className="movie-favourite"/>
+                }
+        </div>
+      </section>
     </div>
   );
 };
