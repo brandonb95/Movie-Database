@@ -1,24 +1,18 @@
-import React from 'react';
-import '../scss/styles.scss';
-import  Unselected  from '../scss/Favourite-Unselected.svg';
+import FavesContainer from '../components/Faves/FavesContainer';
 
-const AddFavourite = (props) => {
-    // const FavouriteComponent = props.favouriteComponent;
-
+const PageFaves = () => {
     return (
         <body>
             <div className="fav-wrapper">
                 <h1>Your Favourites</h1>
                 <p>Heres a list of your favourite movies & shows!</p>
 
-                <div className="fav-movie-container">
-                    {/* <img className="movie-favourite" src={Unselected} alt="Unfavourite" faveComp={FavouriteComponent} />  */}
-                </div>
+                <section className='faves-page'>
+                    <FavesContainer />
+                </section>
             </div>
-        </body>
-
-        
-    )
+        </body>  
+    );
 };
 
-export default AddFavourite;
+export default PageFaves;

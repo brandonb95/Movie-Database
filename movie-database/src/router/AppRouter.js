@@ -6,6 +6,7 @@ import TestSingle from "../components/Movies/TestSingle";
 import About from "../components/About";
 import Favourites from "../components/Favourites";
 import Footer from "../components/Footer";
+import PageFaves from "../components/Favourites";
 
 function AppRouter() {
   
@@ -19,10 +20,8 @@ function AppRouter() {
   <Routes>
     <Route path='/' exact element={<Home />}/>
     <Route path='/about' exact element={<About />}/>
-    <Route path='/favourites' exact element={<Favourites />}/>
-  </Routes>
-  <Routes>
     <Route path='/single-movie/:id' exact element={<TestSingle />}/>
+    <Route path="/favourites" element={<PageFaves />} />
   </Routes>
 </main>
 <Footer title="SUNSET MOVIES"/>
