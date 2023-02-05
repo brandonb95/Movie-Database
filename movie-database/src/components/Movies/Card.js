@@ -27,7 +27,7 @@ function Card({
       dispatch(addFavourite(obj));
     }
   };
-  const [oView, oUpdate] = useState(0);
+  const [oView, oUpdate] = useState(100);
 
   // Change the length of movie overview
   useEffect(() => {
