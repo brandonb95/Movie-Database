@@ -6,6 +6,7 @@ body {
 
     .fav-wrapper {
         margin-bottom:-5rem;
+        color: $sort-color;
     
         h1{
             margin: auto;
@@ -16,15 +17,20 @@ body {
     
         p {
             margin: auto;
-            border-bottom: $dark-bg-color solid 2px;
+            border-bottom: rgba(128, 128, 128, 0.716) solid 2px;
             width: 60%;
             padding-bottom: .75rem;
+            color: $sort-color-light;
         }
 
         .faves-page {
             margin-top: -13rem;
             p{
                 border-bottom: none;
+            }
+
+            .card-title {
+                margin-top: 1rem;
             }
         }
         
