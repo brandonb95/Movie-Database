@@ -59,7 +59,7 @@ function Card({
   }, []);
 
   return (
-    <div>
+    <div className="single-movie-container">
       <div className="card-poster">
         <div className="average-score">{voteAverage}</div>
         {isFave ? (
@@ -94,6 +94,7 @@ function Card({
                 <div className="release-date">{releaseDate}</div> */}
       </div>
       <div className="card-title">{title}</div>
+      <p className="release-date">Released</p>
       <div className="release-date">{releaseDate}</div>
       <Link className="more-info-btn-mobile" to={`/single-movie/${id}`}>
         More Info

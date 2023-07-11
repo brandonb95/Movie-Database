@@ -19,11 +19,14 @@
   text-align: center;
   font-weight: 800;
   font-size: 1.1rem;
+  min-height: 4rem;
 }
 
+p.release-date {
+  margin-top: 2rem;
+}
 .release-date {
   height: 2rem;
-  margin: 0.5rem 0;
   text-align: center;
   font-weight: 600;
   color: $sort-color-light;
@@ -41,11 +44,11 @@
   width: 70%;
   margin: 0 auto;
   padding: 0.6rem 0;
-}
-
-.more-info-btn-mobile:hover {
   transition: 0.3s ease;
-  background-color: #af401f;
+
+  &:hover {
+    background-color: #af401f;
+  }
 }
 
 .more-info-btn {
@@ -77,19 +80,25 @@
     left: 0;
     right: 0;
     bottom: 0;
-    height: 10%;
+    padding: 0.3rem;
     text-align: center;
     background-color: $theme-color;
     color: $white;
     text-decoration: none;
-  }
-
-  .more-info-btn:hover {
     transition: 0.3s ease;
-    background-color: #af401f;
+
+    &:hover {
+      background-color: #af401f;
+    }
   }
 }
 
+// 1344 px (Desktop)
+@media screen and (min-width: 84rem) {
+  .more-info-btn {
+    padding: 0.2rem;
+  }
+}
 // 1344 px (Desktop)
 @media screen and (min-width: 84rem) {
   .average-score {
@@ -184,6 +193,7 @@
   width: 35%;
   height: 35%;
   border: none;
+  transition: 0.3s ease;
 }
 
 .movie-favourite:hover {
@@ -198,6 +208,7 @@
   text-align: center;
   padding: 5rem 0;
 }
+
 // 768 px (Tablet)
 @media screen and (min-width: 48rem) {
   .movie-favourite {

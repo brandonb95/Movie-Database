@@ -89,6 +89,12 @@ function Home() {
     margin: "0 auto",
   };
 
+  const [defaultFilter, setDefaultFilter] = useState("popular");
+
+  useEffect(() => {
+    setDefaultFilter("popular");
+  }, []);
+
   return (
     <div className="movie-data">
       <div style={containerStyles}>
@@ -102,6 +108,7 @@ function Home() {
               onChange={changeFilter}
               name="filterSelector"
               id="filterSelector"
+              defaultValue="popular" // Set the default value
             >
               <option value="popular">Popular</option>
               <option value="now_playing">Now Playing</option>
@@ -117,6 +124,7 @@ function Home() {
               name="movies"
               id="popular"
               value="popular"
+              defaultChecked // Set "Popular" as checked on page load
             />
             <label htmlFor="popular">Popular</label>
             <input

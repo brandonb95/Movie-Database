@@ -17,7 +17,7 @@ const Navbar = ({ handleShowHideNav }) => {
           <NavLink to="/">TV</NavLink>
         </li>
         <li>
-          <NavLink to="/movies">Movies</NavLink>
+          <NavLink to="/">Movies</NavLink>
         </li>
         <li>
           <NavLink to="/favourites">Favourites</NavLink>

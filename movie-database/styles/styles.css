@@ -183,6 +183,7 @@ header li a {
   }
   .movie-data .movie-filter-container input[type=radio]:checked + label {
     background-color: #515151;
+    color: #ffffff;
   }
   .movie-data .movie-filter-container input[type=radio]:focus + label {
     color: #ffffff;
@@ -216,11 +217,15 @@ header li a {
   margin: 0 auto;
 }
 .movie-data .movie-container {
-  margin-top: 5rem;
+  margin: 5rem 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem 1rem;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+.movie-data .movie-container .single-movie-container {
+  min-width: 100%;
+  min-height: 8rem;
 }
 
 .container-slider {
@@ -575,11 +580,15 @@ footer .credits {
   text-align: center;
   font-weight: 800;
   font-size: 1.1rem;
+  min-height: 4rem;
+}
+
+p.release-date {
+  margin-top: 2rem;
 }
 
 .release-date {
   height: 2rem;
-  margin: 0.5rem 0;
   text-align: center;
   font-weight: 600;
   color: #a1a1a1;
@@ -596,10 +605,9 @@ footer .credits {
   width: 70%;
   margin: 0 auto;
   padding: 0.6rem 0;
-}
-
-.more-info-btn-mobile:hover {
   transition: 0.3s ease;
+}
+.more-info-btn-mobile:hover {
   background-color: #af401f;
 }
 
@@ -627,15 +635,20 @@ footer .credits {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 10%;
+    padding: 0.3rem;
     text-align: center;
     background-color: #f1592a;
     color: #ffffff;
     text-decoration: none;
+    transition: 0.3s ease;
   }
   .more-info-btn:hover {
-    transition: 0.3s ease;
     background-color: #af401f;
+  }
+}
+@media screen and (min-width: 84rem) {
+  .more-info-btn {
+    padding: 0.2rem;
   }
 }
 @media screen and (min-width: 84rem) {
@@ -718,6 +731,7 @@ footer .credits {
   width: 35%;
   height: 35%;
   border: none;
+  transition: 0.3s ease;
 }
 
 .movie-favourite:hover {
@@ -753,7 +767,7 @@ body {
   text-align: center;
 }
 body .fav-wrapper {
-  min-height: 50vh;
+  min-height: 30vh;
   color: #515151;
   max-width: 80%;
   margin: 0 auto;

@@ -86,67 +86,16 @@ function MoviesPage() {
   };
 
   return (
-    <div className="movie-data">
-      <div style={containerStyles}>
-        <ImageSlider slides={slides} />
-      </div>
+    <body>
+      <div className="fav-wrapper">
+        <h1>Your Favourites</h1>
+        <p>Find your favourites here, all in one place.</p>
 
-      <div className="movie-filter-container">
-        {oView === true ? (
-          <section className="movie-list">
-            <select
-              onChange={changeFilter}
-              name="filterSelector"
-              id="filterSelector"
-            >
-              <option value="popular">Popular</option>
-              <option value="now_playing">Now Playing</option>
-              <option value="top_rated">Top Rated</option>
-              <option value="upcoming">Upcoming</option>
-            </select>
-          </section>
-        ) : (
-          <section className="movie-list">
-            <input
-              onChange={changeFilter}
-              type="radio"
-              name="movies"
-              id="popular"
-              value="popular"
-            />
-            <label for="popular">Popular</label>
-            <input
-              onChange={changeFilter}
-              type="radio"
-              name="movies"
-              id="now-playing"
-              value="now_playing"
-            />
-            <label for="now-playing">Now Playing</label>
-            <input
-              onChange={changeFilter}
-              type="radio"
-              name="movies"
-              id="top-rated"
-              value="top_rated"
-            />
-            <label for="top-rated">Top Rated</label>
-            <input
-              onChange={changeFilter}
-              type="radio"
-              name="movies"
-              id="upcoming"
-              value="upcoming"
-            />
-            <label for="upcoming">Upcoming</label>
-          </section>
-        )}
+        <section className="faves-page">
+          <FavesContainer />
+        </section>
       </div>
-
-      <section className="movie-list">
-        <div className="movie-container">{cards}</div>
-      </section>
-    </div>
+    </body>
   );
 }
 
