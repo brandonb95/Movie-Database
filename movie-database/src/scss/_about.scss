@@ -1,86 +1,88 @@
 @use "variables" as *;
 
 body {
-    background-color: $light-bg-color;
-    font-family: $body-font;
+  background-color: $light-bg-color;
+  font-family: $body-font;
 }
 .about-content {
-    text-align: center;
-    padding: 0 1.2rem;
-    margin-bottom: -15rem;
+  text-align: center;
+  padding: 0 1.2rem;
+  margin-bottom: -15rem;
 
-    img {
-        max-width: 15rem;
-        margin-top: 8rem;
-    }
+  img {
+    max-width: 15rem;
+    margin-top: 8rem;
+  }
 
-    h1, h2, h3, h4 {
-        padding-top: 2rem;
-        color: rgb(69, 69, 69)
-        
-    }
+  h1,
+  h2,
+  h3,
+  h4 {
+    padding-top: 2rem;
+    color: rgb(69, 69, 69);
+  }
 
+  p {
+    padding: 2rem 1rem 0 2.5rem;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    color: $sort-color;
+    text-align: left;
+  }
+
+  .credits {
+    margin-top: 2rem;
     p {
-        padding: 2rem 1rem 0 2.5rem;
-        font-size: 1.1rem;
-        line-height: 1.5rem;
-        color: $sort-color;
-        text-align: left;
+      text-align: center;
     }
-
-    .credits{
-        margin-top: 2rem;
-        .tmdb-logo{
-        max-width: 4rem;
-        text-align: left;
-        margin-top: 2rem;
-        }
+    .tmdb-logo {
+      max-width: 4rem;
+      text-align: left;
+      margin-top: 2rem;
     }
+  }
 }
 
 @media screen and (min-width: 31.25rem) {
-    .about-content {
-        text-align: center;
-        padding: 0 3rem;
-    }
+  .about-content {
+    text-align: center;
+    padding: 0 3rem;
+  }
 }
 
-    @media screen and (min-width: 60rem) {
+@media screen and (min-width: 60rem) {
+  .about-content {
+    // display: grid;
+    // grid-template-columns: 1fr 40fr;
 
-        .about-content {
-        display: grid;
-        grid-template-columns: 1fr 40fr;
-    
-        img {
-            width: 15rem;
-            margin-top: 15rem;
-        }
-    
-        h1 {
-            padding-top: 12rem;
-            font-size: 2.25rem;
-        }
-    
-        p {
-            padding-top: 2rem;
-        }
-        }
+    img {
+      width: 15rem;
+      margin-top: 10rem;
+    }
 
-        .about-info {
-            padding: 0 2rem;
-        }
+    h1 {
+      font-size: 2.25rem;
+    }
+
+    p {
+      padding-top: 2rem;
+    }
+  }
+
+  .about-info {
+    padding: 0 2rem;
+  }
 }
 
 @media screen and (min-width: 75rem) {
-
-    .about-content {
-    display: grid;
-    grid-template-columns: 1fr 45rem 1fr;
-    }
+  .about-content {
+    max-width: 60%;
+    margin: 0 auto;
+  }
 }
 
 @media screen and (min-width: 84rem) {
-    .about-content {
-        margin-bottom: -25rem;
-    }
+  .about-content {
+    margin-bottom: -25rem;
+  }
 }

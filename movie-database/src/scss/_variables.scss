@@ -1,12 +1,18 @@
 // COLOR VARIABLES
 
-$theme-color: #F1592A;
-$dark-bg-color: #1D1D1D;
-$light-bg-color: #EDEDED;
+$theme-color: #f1592a;
+$dark-bg-color: #1d1d1d;
+$light-bg-color: #ededed;
 $sort-color-light: #a1a1a1;
 $sort-color: #515151;
 $white: #ffffff;
 
+// FONT IMPORT
+@font-face {
+  font-family: "Molot";
+  src: url("https://brandonbirk.ca/fonts/Molot.otf") format("truetype");
+}
+
 //FONT
-$logo-font: 'Molot', Arial, Helvetica, sans-serif;
-$body-font: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+$logo-font: "Molot", Arial, Helvetica, sans-serif;
+$body-font: "Franklin Gothic", "Arial Narrow", Arial, sans-serif;

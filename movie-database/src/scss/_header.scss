@@ -37,10 +37,15 @@ header {
   width: 30vw;
   align-items: center;
   padding: 0.6rem;
+  transition: 0.3s ease;
 
   a {
     text-decoration: none;
     color: $white;
+  }
+
+  &:hover {
+    scale: (1.05);
   }
 }
 

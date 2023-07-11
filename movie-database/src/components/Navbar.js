@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 // import '../scss/styles.scss';
 
 const Navbar = ({ handleShowHideNav }) => {
@@ -17,7 +17,7 @@ const Navbar = ({ handleShowHideNav }) => {
           <NavLink to="/">TV</NavLink>
         </li>
         <li>
-          <NavLink to="/">Movies</NavLink>
+          <NavLink to="/movies">Movies</NavLink>
         </li>
         <li>
           <NavLink to="/favourites">Favourites</NavLink>

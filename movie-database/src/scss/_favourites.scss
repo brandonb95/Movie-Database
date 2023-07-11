@@ -1,58 +1,56 @@
 @use "variables" as *;
 
 body {
-    font-family: $body-font;
-    text-align: center;
+  font-family: $body-font;
+  text-align: center;
 
-    .fav-wrapper {
-        margin-bottom:-5rem;
-        color: $sort-color;
-    
-        h1{
-            margin: auto;
-            padding: 10rem 0 .5rem 0;
-            font-family: $logo-font;
-            
-        }
-    
-        p {
-            margin: auto;
-            border-bottom: rgba(128, 128, 128, 0.716) solid 2px;
-            width: 60%;
-            padding-bottom: .75rem;
-            color: $sort-color-light;
-        }
+  .fav-wrapper {
+    // margin-bottom:-5rem;
+    min-height: 50vh;
+    color: $sort-color;
+    max-width: 80%;
+    margin: 0 auto;
 
-        .faves-page {
-            margin-top: -13rem;
-            p{
-                border-bottom: none;
-            }
-
-            .card-title {
-                margin-top: 1rem;
-            }
-        }
-        
-   
+    h1 {
+      margin: auto;
+      padding: 10rem 0 0.5rem 0;
+      font-family: $logo-font;
+      letter-spacing: 3px;
+      font-weight: 400;
     }
+
+    p {
+      margin: auto;
+      border-bottom: rgba(128, 128, 128, 0.716) solid 2px;
+      width: 60%;
+      padding-bottom: 0.75rem;
+      color: $sort-color-light;
+    }
+
+    .faves-page {
+      margin-top: -13rem;
+      p {
+        border-bottom: none;
+      }
+
+      .card-title {
+        margin-top: 1rem;
+      }
+    }
+  }
 }
 
 // 768 px (Tablet)
 @media screen and (min-width: 48rem) {
-
-body {
+  body {
     .fav-wrapper {
-        h1{
-            font-size: 2.25rem;
-        }
+      h1 {
+        font-size: 2.25rem;
+      }
 
-        .faves-page {
-            margin-top: -11rem;
-        }
+      .faves-page {
+        margin-top: -11rem;
+      }
     }
+  }
 }
-
-}
-
-

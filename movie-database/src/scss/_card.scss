@@ -7,7 +7,8 @@
   margin: 0 auto;
   color: $white;
   background-color: $theme-color;
-  padding: 7%;
+  padding: 1rem;
+  min-width: 3.6rem;
   border-radius: 50%;
   font-size: 150%;
 }
@@ -47,7 +48,7 @@
   background-color: #af401f;
 }
 
-.more-info-btn{
+.more-info-btn {
   display: none;
 }
 
@@ -93,7 +94,7 @@
 @media screen and (min-width: 84rem) {
   .average-score {
     font-size: 1.1rem;
-    padding: 6%;
+    padding: 1rem;
     top: -5%;
   }
 }
@@ -195,7 +196,7 @@
   position: relative;
   top: 10rem;
   text-align: center;
-  padding: 5rem;
+  padding: 5rem 0;
 }
 // 768 px (Tablet)
 @media screen and (min-width: 48rem) {

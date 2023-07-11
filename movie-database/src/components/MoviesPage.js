@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
-import Card from "../components/Movies/Card";
+import Card from "./Movies/Card";
 import "../scss/styles.scss";
 import { posterPath } from "./movieVariables";
-import { API_KEY } from "../components/movieVariables";
+import { API_KEY } from "./movieVariables";
 import ImageSlider from "./ImageSlider";
 
 import { useSelector } from "react-redux";
@@ -12,7 +12,7 @@ import isFave from "./movieVariables";
 
 import { Link } from "react-router-dom";
 
-function Home() {
+function MoviesPage() {
   // state for managing fetched data
   const [movieData, setmovieData] = useState([]);
 
@@ -31,10 +31,6 @@ function Home() {
       );
       const jsonData = await api.json();
       setmovieData(jsonData.results);
-
-      // get the first 12 movies here, then set them as the data
-      const firstTwelve = jsonData.results.splice(0, 12);
-      setmovieData(firstTwelve);
     };
     fetchData();
   }, [filter]);
@@ -118,7 +114,7 @@ function Home() {
               id="popular"
               value="popular"
             />
-            <label htmlFor="popular">Popular</label>
+            <label for="popular">Popular</label>
             <input
               onChange={changeFilter}
               type="radio"
@@ -126,7 +122,7 @@ function Home() {
               id="now-playing"
               value="now_playing"
             />
-            <label htmlFor="now-playing">Now Playing</label>
+            <label for="now-playing">Now Playing</label>
             <input
               onChange={changeFilter}
               type="radio"
@@ -134,7 +130,7 @@ function Home() {
               id="top-rated"
               value="top_rated"
             />
-            <label htmlFor="top-rated">Top Rated</label>
+            <label for="top-rated">Top Rated</label>
             <input
               onChange={changeFilter}
               type="radio"
@@ -142,7 +138,7 @@ function Home() {
               id="upcoming"
               value="upcoming"
             />
-            <label htmlFor="upcoming">Upcoming</label>
+            <label for="upcoming">Upcoming</label>
           </section>
         )}
       </div>
@@ -154,4 +150,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default MoviesPage;
