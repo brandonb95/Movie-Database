@@ -19,12 +19,13 @@
   text-align: center;
   font-weight: 800;
   font-size: 1.1rem;
-  min-height: 4rem;
+  min-height: 5.5rem;
 }
 
 p.release-date {
-  margin-top: 2rem;
+  margin-top: 0.5rem;
 }
+
 .release-date {
   height: 2rem;
   text-align: center;
@@ -40,10 +41,10 @@ p.release-date {
   background-color: $theme-color;
   color: $white;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   width: 70%;
   margin: 0 auto;
-  padding: 0.6rem 0;
+  padding: 0.6rem 0.3rem;
   transition: 0.3s ease;
 
   &:hover {
@@ -143,15 +144,10 @@ p.release-date {
     right: 0;
     height: 100%;
     text-align: center;
-    padding: 2rem 0.6rem 0 0.6rem;
+    padding: 3rem 0.6rem 0 0.6rem;
     font-size: 0.8rem;
     font-weight: 200;
-    line-height: 1rem;
-  }
-
-  .average-score {
-    position: absolute;
-    z-index: 99;
+    line-height: 1.5rem;
   }
 
   .overview:hover {
@@ -164,9 +160,28 @@ p.release-date {
   @media screen and (min-width: 30rem) {
     .overview {
       font-size: 100%;
-      padding-top: 3rem;
-      line-height: 1.5rem;
+      padding: 3rem 2rem;
     }
+  }
+
+  // 608 px
+  @media screen and (min-width: 38rem) {
+    .overview {
+      padding: 5rem 2rem;
+    }
+  }
+
+  // 768 px (Tablet)
+  @media screen and (min-width: 48rem) {
+    .overview {
+      padding: 2.2rem 1rem 0 1rem;
+      line-height: 1.2rem;
+    }
+  }
+
+  .average-score {
+    position: absolute;
+    z-index: 99;
   }
 }
 

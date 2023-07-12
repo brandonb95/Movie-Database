@@ -483,6 +483,7 @@ footer .footer-main {
   justify-content: space-around;
   text-align: left;
   gap: 2rem;
+  margin: 0 auto;
 }
 footer .footer-main img {
   width: 6rem;
@@ -532,8 +533,6 @@ footer .credits {
     margin-top: 22rem;
   }
   .footer-main {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
     vertical-align: middle;
     text-align: left;
     gap: 2rem;
@@ -546,12 +545,9 @@ footer .credits {
 @media screen and (min-width: 84rem) {
   footer {
     margin-top: 32rem;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
   }
   footer .footer-main {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    width: 60%;
   }
   footer .footer-main .logo-desc {
     padding-left: 5rem;
@@ -580,11 +576,11 @@ footer .credits {
   text-align: center;
   font-weight: 800;
   font-size: 1.1rem;
-  min-height: 4rem;
+  min-height: 5.5rem;
 }
 
 p.release-date {
-  margin-top: 2rem;
+  margin-top: 0.5rem;
 }
 
 .release-date {
@@ -601,10 +597,10 @@ p.release-date {
   background-color: #f1592a;
   color: #ffffff;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   width: 70%;
   margin: 0 auto;
-  padding: 0.6rem 0;
+  padding: 0.6rem 0.3rem;
   transition: 0.3s ease;
 }
 .more-info-btn-mobile:hover {
@@ -688,14 +684,10 @@ p.release-date {
   right: 0;
   height: 100%;
   text-align: center;
-  padding: 2rem 0.6rem 0 0.6rem;
+  padding: 3rem 0.6rem 0 0.6rem;
   font-size: 0.8rem;
   font-weight: 200;
-  line-height: 1rem;
-}
-.card-poster .average-score {
-  position: absolute;
-  z-index: 99;
+  line-height: 1.5rem;
 }
 .card-poster .overview:hover {
   background-color: rgba(0, 0, 0, 0.7);
@@ -705,9 +697,23 @@ p.release-date {
 @media screen and (min-width: 30rem) {
   .card-poster .overview {
     font-size: 100%;
-    padding-top: 3rem;
-    line-height: 1.5rem;
+    padding: 3rem 2rem;
   }
+}
+@media screen and (min-width: 38rem) {
+  .card-poster .overview {
+    padding: 5rem 2rem;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .card-poster .overview {
+    padding: 2.2rem 1rem 0 1rem;
+    line-height: 1.2rem;
+  }
+}
+.card-poster .average-score {
+  position: absolute;
+  z-index: 99;
 }
 
 .card-poster:hover {
@@ -897,6 +903,41 @@ body .fav-wrapper .faves-page .card-title {
   }
   .individual-wrapper .content-wrapper .movie-overview p {
     padding-right: 5rem;
+  }
+}
+.movies-page {
+  position: relative;
+  top: 0;
+}
+
+.movie-data {
+  position: relative;
+  top: 5.6rem;
+  z-index: 9;
+}
+
+.movie-list-movies-page {
+  top: 5rem !important;
+}
+
+.movie-page-filter-container {
+  top: 4rem;
+}
+
+.page-title {
+  font-size: 3rem;
+  width: 100%;
+  margin: 0 0 4rem 0;
+  text-align: center;
+}
+
+@media screen and (min-width: 48rem) {
+  .movie-page-filter-container {
+    margin: 0 !important;
+  }
+  .movie-page-filter {
+    top: 0 !important;
+    text-align: center;
   }
 }
 * {

@@ -48,8 +48,10 @@ function Card({
         value = 250;
       } else if (window.innerWidth > 1000) {
         value = 230;
+      } else if (window.innerWidth > 768) {
+        value = 110;
       } else if (window.innerWidth > 500) {
-        value = 230;
+        value = 200;
       }
 
       oUpdate(value);

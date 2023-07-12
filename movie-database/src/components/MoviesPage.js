@@ -63,39 +63,67 @@ function MoviesPage() {
     />
   ));
 
-  // Create slides
-  const slides = [
-    {
-      url: "http://brandonbirk.ca/movie-database/carousel-image-1.jpg",
-      title: "Spider-Man",
-    },
-    {
-      url: "http://brandonbirk.ca/movie-database/carousel-image-2.jpg",
-      title: "After Ever Happy",
-    },
-    {
-      url: "http://brandonbirk.ca/movie-database/carousel-image-3.jpg",
-      title: "The Woman King",
-    },
-  ];
-
-  const containerStyles = {
-    width: "100%",
-    height: "200px",
-    margin: "0 auto",
-  };
-
   return (
-    <body>
-      <div className="fav-wrapper">
-        <h1>Your Favourites</h1>
-        <p>Find your favourites here, all in one place.</p>
-
-        <section className="faves-page">
-          <FavesContainer />
-        </section>
+    <div className="movie-data movies-page">
+      <div className="movie-filter-container movie-page-filter-container">
+        <h2 className="page-title">Movies</h2>
+        {oView === true ? (
+          <section className="movie-list-filter">
+            <select
+              onChange={changeFilter}
+              name="filterSelector"
+              id="filterSelector"
+              defaultValue="popular" // Set the default value
+            >
+              <option value="popular">Popular</option>
+              <option value="now_playing">Now Playing</option>
+              <option value="top_rated">Top Rated</option>
+              <option value="upcoming">Upcoming</option>
+            </select>
+          </section>
+        ) : (
+          <section className="movie-list movie-page-filter">
+            <input
+              onChange={changeFilter}
+              type="radio"
+              name="movies"
+              id="popular"
+              value="popular"
+              defaultChecked // Set "Popular" as checked on page load
+            />
+            <label htmlFor="popular">Popular</label>
+            <input
+              onChange={changeFilter}
+              type="radio"
+              name="movies"
+              id="now-playing"
+              value="now_playing"
+            />
+            <label htmlFor="now-playing">Now Playing</label>
+            <input
+              onChange={changeFilter}
+              type="radio"
+              name="movies"
+              id="top-rated"
+              value="top_rated"
+            />
+            <label htmlFor="top-rated">Top Rated</label>
+            <input
+              onChange={changeFilter}
+              type="radio"
+              name="movies"
+              id="upcoming"
+              value="upcoming"
+            />
+            <label htmlFor="upcoming">Upcoming</label>
+          </section>
+        )}
       </div>
-    </body>
+
+      <section className="movie-list movie-list-movies-page">
+        <div className="movie-container">{cards}</div>
+      </section>
+    </div>
   );
 }
 

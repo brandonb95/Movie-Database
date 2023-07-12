@@ -7,9 +7,10 @@
 @use "_card";
 @use "favourites";
 @use "testsingle";
+@use "movies";
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
