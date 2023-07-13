@@ -29,20 +29,18 @@ export const favouritesSlice = createSlice({
     addFavourite: (state, action) => {
       const newFaves = [...state.value, action.payload];
 
-      //store newFaves array into local storage
+      // Store newFaves array into local storage
       localStorage.setItem("movieFaves", JSON.stringify(newFaves));
       state.value = newFaves;
     },
     removeFavourite: (state, action) => {
       const favesArray = state.value;
-      // splice(`insert at index`, `number of elements to replace`, `value to insert`)
-      // This splice matches the movie index in the favesArray and replaces 1 element with value=blank
-      // When value parameter is not declared, splice removes the targeted element from array
-      // therefore, removes targeted movie object from favesArray
-      favesArray.splice(getIndex(action.payload, state.value), 1);
-      // set edited favesArray into local storage (replacing 'newFaves' array)
-      localStorage.setItem("movieFaves", JSON.stringify(favesArray));
-      state.value = favesArray;
+      const index = getIndex(action.payload, state.value);
+      if (index !== -1) {
+        favesArray.splice(index, 1);
+        localStorage.setItem("movieFaves", JSON.stringify(favesArray));
+        state.value = favesArray;
+      }
     },
   },
 });
