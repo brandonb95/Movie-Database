@@ -51,6 +51,7 @@ function Home() {
   }, []);
 
   const favs = useSelector((state) => state.favourites.value);
+
   let cards = movieData.map((movie, i) => (
     <Card
       object={movieData[i]}

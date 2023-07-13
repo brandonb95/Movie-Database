@@ -2,8 +2,7 @@ import React from "react";
 import FavBtn from "../Faves/FaveBtn";
 import { addFavourite, removeFavourite } from "../Faves/favouritesSlice";
 import { useDispatch } from "react-redux";
-
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Unselected from "../../scss/Favourite-Unselected.svg";
 
@@ -17,8 +16,10 @@ function Card({
   movieObj,
   isFave,
 }) {
-  // Redux related for favouriting funciton
   const dispatch = useDispatch();
+  const location = useLocation();
+
+  const roundedVoteAverage = voteAverage.toFixed(1); // Constrain to 1 decimal place
 
   const handleFaveClick = (addToFave, obj) => {
     if (addToFave === true) {
@@ -27,18 +28,16 @@ function Card({
       dispatch(addFavourite(obj));
     }
   };
-  const [oView, oUpdate] = useState(100);
 
-  // Change the length of movie overview
+  const [oView, setOView] = useState(100);
+
   useEffect(() => {
     const resizeWin = () => {
-      const changeOverview = window.innerWidth > 768 ? 100 : 500;
-
-      oUpdate(changeOverview);
-
       let value = 100;
 
-      if (window.innerWidth > 1632) {
+      if (location.pathname === "/favourites") {
+        value = 40;
+      } else if (window.innerWidth > 1632) {
         value = 200;
       } else if (window.innerWidth > 1500) {
         value = 100;
@@ -51,19 +50,24 @@ function Card({
       } else if (window.innerWidth > 768) {
         value = 110;
       } else if (window.innerWidth > 500) {
-        value = 200;
+        value = 430;
       }
 
-      oUpdate(value);
+      setOView(value);
     };
 
     window.addEventListener("resize", resizeWin);
-  }, []);
+
+    // Cleanup function to remove the event listener
+    return () => {
+      window.removeEventListener("resize", resizeWin);
+    };
+  }, [location.pathname]);
 
   return (
     <div className="single-movie-container">
       <div className="card-poster">
-        <div className="average-score">{voteAverage}</div>
+        <div className="average-score">{roundedVoteAverage}</div>
         {isFave ? (
           <FavBtn
             isFave={true}
