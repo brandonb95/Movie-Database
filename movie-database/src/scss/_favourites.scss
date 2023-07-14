@@ -34,12 +34,19 @@
 
   .faves-page {
     margin-top: -13rem;
+    min-height: 45vh;
     p {
       border-bottom: none;
+      color: $sort-color;
     }
 
     .card-title {
       margin-top: 1rem;
+    }
+  }
+  .more-info-btn {
+    p {
+      color: $white;
     }
   }
 }
@@ -53,6 +60,7 @@
 
     .faves-page {
       margin-top: -11rem;
+      min-height: 35vh;
     }
   }
 }

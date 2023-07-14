@@ -13,9 +13,9 @@ const Navbar = ({ handleShowHideNav }) => {
   return (
     <nav className="main-nav" onClick={closeNav}>
       <ul>
-        <li>
+        {/* <li>
           <NavLink to="/">TV</NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink to="/movies">Movies</NavLink>
         </li>

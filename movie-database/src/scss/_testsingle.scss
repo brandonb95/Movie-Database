@@ -1,135 +1,139 @@
 @use "variables" as *;
 
 .individual-wrapper {
-    display: grid;
-        grid-template-columns: 15rem;
-        justify-content: center;
-    padding: 8rem 3rem 0 3rem;
-    margin-bottom: -15rem;
-    
+  display: grid;
+  grid-template-columns: 15rem;
+  justify-content: center;
+  padding: 8rem 3rem 0 3rem;
+  margin-bottom: -15rem;
 
-    .poster {
+  .poster {
+    img {
+      width: 15rem;
+    }
+  }
 
-        img {
-            width: 15rem;
-        }
+  .content-wrapper {
+    text-align: left;
 
+    h1 {
+      font-family: $logo-font;
+      color: $sort-color;
+      padding: 2rem 0 1rem 0;
     }
 
+    h3 {
+      color: $sort-color;
+      padding-top: 1rem;
+      font-weight: 400;
+      a {
+        text-decoration: none;
+        color: $white;
+        background-color: $theme-color;
+        padding: 0.6rem 1.2rem;
+        transition: 0.3s ease;
 
-    .content-wrapper {
-        text-align: left;
-
-        h1 {
-            font-family: $logo-font;
-            color: $sort-color;
-            padding: 2rem 0 1rem 0;
-    
+        &:hover {
+          background-color: $theme-color-hover;
         }
-
-        h3 {
-            color: $sort-color;
-            padding-top: 1rem;
-        }
-    
-        .release-rating {
-            display: flex;
-            justify-content: space-between;
-    
-            .rating{
-                color: $theme-color;
-
-                p{
-                  padding-top: .5rem;  
-                }
-            }
-        }
-    
-        .movie-overview {
-            p{
-                font-size: .75rem;
-                padding-top: .75rem;
-            }
-        }
-
-        .movie-favourite {
-            position: static;
-            width: 3rem;
-            
-            svg {
-                padding: 1rem 0 0 0;
-                margin-left: -.5rem;
-            }
-
+      }
     }
-}
+
+    .release-rating {
+      display: flex;
+      justify-content: space-between;
+
+      .rating {
+        color: $theme-color;
+
+        p {
+          padding-top: 0.5rem;
+        }
+      }
+    }
+
+    .movie-overview {
+      p {
+        font-size: 0.75rem;
+        padding-top: 0.75rem;
+      }
+    }
+
+    .movie-favourite {
+      position: static;
+      width: 3rem;
+
+      svg {
+        padding: 1rem 0 0 0;
+        margin-left: -0.5rem;
+      }
+    }
+  }
 }
 
 // 768 px (Tablet)
 @media screen and (min-width: 48rem) {
-    .individual-wrapper {
-        display: grid;
-            grid-template-columns: 1fr fit-content(50%) 1fr;
-            justify-content: center;
-            margin-bottom: -15rem;
+  .individual-wrapper {
+    display: flex;
+    max-width: 80%;
+    margin: 0 auto;
+    // grid-template-columns: 1fr fit-content(50%) 1fr;
+    justify-content: center;
+    margin-bottom: -15rem;
 
     .poster {
-
-        img {
-            width: 18rem;
-            padding-top: 4rem;
-        }
+      img {
+        width: 18rem;
+        padding-top: 4rem;
+      }
     }
 
     .release-rating {
-        flex-direction: column;
+      flex-direction: column;
 
-        .release-date {
-            text-align: left;
-        }
-        .rating {
-            font-size: 2rem;
-            padding-right: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: rgba(128, 128, 128, 0.838) solid 2px;
-        }
+      .release-date {
+        text-align: left;
+      }
+      .rating {
+        font-size: 2rem;
+        padding-right: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: rgba(128, 128, 128, 0.838) solid 2px;
+      }
     }
 
     .content-wrapper {
-        padding-left: 5rem;
-        padding-top: 2.75rem;
+      padding-left: 5rem;
+      padding-top: 2.75rem;
 
-        h1 {
-            font-size: 2.3rem;
-        }
-        
-        .movie-overview p {
-            font-size: 1rem;
-            color: $sort-color;
-            padding-top: .75rem;
-        }
+      h1 {
+        font-size: 2.3rem;
+      }
+
+      .movie-overview p {
+        font-size: 1rem;
+        color: $sort-color;
+        padding-top: 0.75rem;
+      }
     }
-    }
+  }
 }
 
 // 1344 px (Desktop)
 @media screen and (min-width: 84rem) {
-    .individual-wrapper {
-            display: grid;
-            grid-template-columns: 1fr fit-content(40%) 1fr;
-            justify-content: center;
-        margin-bottom: -25rem;
+  .individual-wrapper {
+    margin-bottom: -25rem;
 
-        .poster {
-            img {
-                margin-left: 15rem;
-            }
-        }
-
-        .content-wrapper {
-            .movie-overview p {
-                padding-right: 5rem;
-            }
-        }
+    .poster {
+      img {
+        // margin-left: 15rem;
+      }
     }
+
+    .content-wrapper {
+      .movie-overview p {
+        padding-right: 5rem;
+      }
+    }
+  }
 }

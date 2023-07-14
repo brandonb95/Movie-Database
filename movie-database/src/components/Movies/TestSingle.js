@@ -2,11 +2,12 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { posterPath } from "../movieVariables";
-import {API_KEY} from '../movieVariables';
-import FavBtn from '../Faves/FaveBtn';
-import { useDispatch,useSelector } from 'react-redux';
-import { addFavourite, removeFavourite } from '../Faves/favouritesSlice';
-import isFave from '../movieVariables';
+import { API_KEY } from "../movieVariables";
+import FavBtn from "../Faves/FaveBtn";
+import { useDispatch, useSelector } from "react-redux";
+import { addFavourite, removeFavourite } from "../Faves/favouritesSlice";
+import isFave from "../movieVariables";
+import { Link, useLocation } from "react-router-dom";
 
 const Single = () => {
   const [movieData, setmovieData] = useState({});
@@ -15,10 +16,10 @@ const Single = () => {
 
   let { id } = useParams();
 
-
   let fetchMovie = async () => {
-
-    let results = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`);
+    let results = await fetch(
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`
+    );
     const jsonData = await results.json();
     setmovieData(jsonData);
     setRating(Math.round(jsonData.vote_average * 10));
@@ -26,7 +27,7 @@ const Single = () => {
   useEffect(() => {
     fetchMovie();
   }, []);
-  
+
   const faves = useSelector((state) => state.favourites.value);
 
   console.log(faves);
@@ -35,25 +36,23 @@ const Single = () => {
 
   const handleFaveClick = (addToFave, obj) => {
     if (addToFave === true) {
-        
-          dispatch(removeFavourite(obj));
+      dispatch(removeFavourite(obj));
     } else {
-       
-          dispatch(addFavourite(obj));
-        
+      dispatch(addFavourite(obj));
     }
-  }
+  };
 
   const isFavorite = isFave(faves, null, movieData.id);
-  
+
   return (
     <div className="individual-wrapper">
-
       <div className="poster">
         <div>
-          <img src={posterPath + movieData.poster_path} alt={movieData.title}></img>
+          <img
+            src={posterPath + movieData.poster_path}
+            alt={movieData.title}
+          ></img>
         </div>
-
       </div>
 
       <section className="content-wrapper">
@@ -65,7 +64,7 @@ const Single = () => {
           </div>
 
           <div className="rating">
-              <p>{rating}%</p>
+            <p>{rating}%</p>
           </div>
         </section>
 
@@ -75,12 +74,26 @@ const Single = () => {
         </div>
 
         <div className="fav-button">
-                { isFavorite ?
-                  <FavBtn isFave={true} handleFaveClick={()=>handleFaveClick(isFavorite, movieData)} className="movie-favourite"/>
-                  :
-                  <FavBtn isFave={false} handleFaveClick={()=>handleFaveClick(isFavorite, movieData)}className="movie-favourite"/>
-                }
+          {isFavorite ? (
+            <FavBtn
+              isFave={true}
+              handleFaveClick={() => handleFaveClick(isFavorite, movieData)}
+              className="movie-favourite"
+            />
+          ) : (
+            <FavBtn
+              isFave={false}
+              handleFaveClick={() => handleFaveClick(isFavorite, movieData)}
+              className="movie-favourite"
+            />
+          )}
         </div>
+
+        <h3>
+          <Link className="back-btn" to={`/movies`}>
+            Movies
+          </Link>
+        </h3>
       </section>
     </div>
   );
